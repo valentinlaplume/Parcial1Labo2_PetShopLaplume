@@ -67,8 +67,8 @@ namespace Comercio
             // 
             // pb_CerrarAplicacion
             // 
-            this.pb_CerrarAplicacion.Location = new System.Drawing.Point(822, 0);
-            this.pb_CerrarAplicacion.Size = new System.Drawing.Size(27, 17);
+            this.pb_CerrarAplicacion.Location = new System.Drawing.Point(827, 0);
+            this.pb_CerrarAplicacion.Size = new System.Drawing.Size(22, 18);
             this.pb_CerrarAplicacion.Click += new System.EventHandler(this.pb_CerrarAplicacion_Click);
             // 
             // lbl_TituloForms
@@ -216,12 +216,17 @@ namespace Comercio
             EntidadesComercio.EnumTipoProducto.Juguete,
             EntidadesComercio.EnumTipoProducto.Comodidad,
             EntidadesComercio.EnumTipoProducto.Limpieza,
+            EntidadesComercio.EnumTipoProducto.Farmacia,
+            EntidadesComercio.EnumTipoProducto.Alimento,
+            EntidadesComercio.EnumTipoProducto.Juguete,
+            EntidadesComercio.EnumTipoProducto.Comodidad,
+            EntidadesComercio.EnumTipoProducto.Limpieza,
             EntidadesComercio.EnumTipoProducto.Farmacia});
             this.cmb_TiposProductos.Location = new System.Drawing.Point(86, 21);
             // 
             // pnl_BarraForms
             // 
-            this.pnl_BarraForms.Size = new System.Drawing.Size(850, 18);
+            this.pnl_BarraForms.Size = new System.Drawing.Size(850, 19);
             // 
             // lbl_CodigoDelProducto
             // 

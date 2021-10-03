@@ -22,6 +22,7 @@ namespace Comercio
             InitializeComponent();
         }
         #endregion
+
         private void LimpiarCampos()
         {
             txt_DniIngresado.Text = "";
@@ -36,10 +37,6 @@ namespace Comercio
             Size = new Size(767, 308);
             MinimumSize = Size;
             MaximumSize = new Size(767, 457);
-        }
-        private void pb_CerrarAplicacion_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         #endregion
 

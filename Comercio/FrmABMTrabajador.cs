@@ -158,7 +158,7 @@ namespace Comercio
             {
                 if (this.usuarioSeleccionado != null)
                 {
-                    Size = new Size(865, 470);
+                    Size = new Size(850, 435);
                     CompletarCamposAModificar(this.usuarioSeleccionado);
                 }
             }
