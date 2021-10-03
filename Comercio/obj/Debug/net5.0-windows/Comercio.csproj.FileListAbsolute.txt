@@ -67,3 +67,4 @@ C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows
 C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.pdb
 C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.genruntimeconfig.cache
 C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.FrmPrincipalMenu.resources
+C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.FrmAltaModificarProducto.resources

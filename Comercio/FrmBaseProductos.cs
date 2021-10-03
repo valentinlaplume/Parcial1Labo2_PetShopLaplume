@@ -28,19 +28,19 @@ namespace Comercio
         #endregion
 
         #region Cargar
-        public void CargarTiposProductosAlComboBox()
+        public void CargarTiposProductosAlComboBox(ComboBox combobox)
         {
-            cmb_TiposProductos.Items.Clear();
-            cmb_TiposProductos.Items.Add(EnumTipoProducto.Alimento);
-            cmb_TiposProductos.Items.Add(EnumTipoProducto.Juguete);
-            cmb_TiposProductos.Items.Add(EnumTipoProducto.Comodidad);
-            cmb_TiposProductos.Items.Add(EnumTipoProducto.Limpieza);
-            cmb_TiposProductos.Items.Add(EnumTipoProducto.Farmacia);
+            combobox.Items.Clear();
+            combobox.Items.Add(EnumTipoProducto.Alimento);
+            combobox.Items.Add(EnumTipoProducto.Juguete);
+            combobox.Items.Add(EnumTipoProducto.Comodidad);
+            combobox.Items.Add(EnumTipoProducto.Limpieza);
+            combobox.Items.Add(EnumTipoProducto.Farmacia);
         }
         public void CargarListasPorTipoProducto(EnumTipoProducto tipoProducto)
         {
             LimpiarListasProductos();
-            List<Producto> listaFiltrada = Producto.ListaProductos.Where(p => p.TipoProducto == tipoProducto).ToList();
+            List<Producto> listaFiltrada = CoreDelSistema.ListaProductos.Where(p => p.TipoProducto == tipoProducto).ToList();
 
             foreach (Producto producto in listaFiltrada)
             {
@@ -61,7 +61,7 @@ namespace Comercio
 
         private void FrmBaseProductos_Load(object sender, EventArgs e)
         {
-            CargarTiposProductosAlComboBox();
+            CargarTiposProductosAlComboBox(cmb_TiposProductos);
         }
 
         private void cmb_TiposProductos_SelectedIndexChanged(object sender, EventArgs e)

@@ -35,6 +35,7 @@ namespace Comercio
             this.btn_EliminarProducto = new System.Windows.Forms.Button();
             this.btn_ModificarProducto = new System.Windows.Forms.Button();
             this.lbl_ProductoEncontrado = new System.Windows.Forms.Label();
+            this.btn_AgregarProducto = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarAplicacion)).BeginInit();
             this.pnl_BarraForms.SuspendLayout();
@@ -76,6 +77,16 @@ namespace Comercio
             // cmb_TiposProductos
             // 
             this.cmb_TiposProductos.Items.AddRange(new object[] {
+            EntidadesComercio.EnumTipoProducto.Alimento,
+            EntidadesComercio.EnumTipoProducto.Juguete,
+            EntidadesComercio.EnumTipoProducto.Comodidad,
+            EntidadesComercio.EnumTipoProducto.Limpieza,
+            EntidadesComercio.EnumTipoProducto.Farmacia,
+            EntidadesComercio.EnumTipoProducto.Alimento,
+            EntidadesComercio.EnumTipoProducto.Juguete,
+            EntidadesComercio.EnumTipoProducto.Comodidad,
+            EntidadesComercio.EnumTipoProducto.Limpieza,
+            EntidadesComercio.EnumTipoProducto.Farmacia,
             EntidadesComercio.EnumTipoProducto.Alimento,
             EntidadesComercio.EnumTipoProducto.Juguete,
             EntidadesComercio.EnumTipoProducto.Comodidad,
@@ -163,7 +174,7 @@ namespace Comercio
             // 
             // btn_ModificarProducto
             // 
-            this.btn_ModificarProducto.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_ModificarProducto.BackColor = System.Drawing.Color.Gold;
             this.btn_ModificarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ModificarProducto.Enabled = false;
             this.btn_ModificarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -174,6 +185,7 @@ namespace Comercio
             this.btn_ModificarProducto.TabIndex = 4;
             this.btn_ModificarProducto.Text = "MODIFICAR";
             this.btn_ModificarProducto.UseVisualStyleBackColor = false;
+            this.btn_ModificarProducto.Click += new System.EventHandler(this.btn_ModificarProducto_Click);
             // 
             // lbl_ProductoEncontrado
             // 
@@ -188,11 +200,26 @@ namespace Comercio
             this.lbl_ProductoEncontrado.Text = "Producto Encontrado";
             this.lbl_ProductoEncontrado.Visible = false;
             // 
+            // btn_AgregarProducto
+            // 
+            this.btn_AgregarProducto.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_AgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AgregarProducto.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_AgregarProducto.Location = new System.Drawing.Point(445, 424);
+            this.btn_AgregarProducto.Name = "btn_AgregarProducto";
+            this.btn_AgregarProducto.Size = new System.Drawing.Size(86, 34);
+            this.btn_AgregarProducto.TabIndex = 56;
+            this.btn_AgregarProducto.Text = "AGREGAR";
+            this.btn_AgregarProducto.UseVisualStyleBackColor = false;
+            this.btn_AgregarProducto.Click += new System.EventHandler(this.btn_AgregarProducto_Click);
+            // 
             // FrmABMProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 470);
+            this.Controls.Add(this.btn_AgregarProducto);
             this.Controls.Add(this.lbl_ProductoEncontrado);
             this.Controls.Add(this.btn_EliminarProducto);
             this.Controls.Add(this.btn_ModificarProducto);
@@ -214,6 +241,7 @@ namespace Comercio
             this.Controls.SetChildIndex(this.btn_ModificarProducto, 0);
             this.Controls.SetChildIndex(this.btn_EliminarProducto, 0);
             this.Controls.SetChildIndex(this.lbl_ProductoEncontrado, 0);
+            this.Controls.SetChildIndex(this.btn_AgregarProducto, 0);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarAplicacion)).EndInit();
@@ -230,5 +258,6 @@ namespace Comercio
         private System.Windows.Forms.Button btn_EliminarProducto;
         private System.Windows.Forms.Button btn_ModificarProducto;
         private System.Windows.Forms.Label lbl_ProductoEncontrado;
+        private System.Windows.Forms.Button btn_AgregarProducto;
     }
 }

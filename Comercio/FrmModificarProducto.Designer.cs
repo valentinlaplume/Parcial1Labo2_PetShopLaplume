@@ -262,9 +262,6 @@ namespace Comercio
             // 
             // txt_CodigoProductoIngresado
             // 
-            this.txt_CodigoProductoIngresado.Location = new System.Drawing.Point(126, 170);
-            this.txt_CodigoProductoIngresado.PlaceholderText = "";
-            this.txt_CodigoProductoIngresado.Size = new System.Drawing.Size(124, 23);
             // 
             // cmb_TipoProductoElegido
             // 
@@ -482,7 +479,6 @@ namespace Comercio
             this.Controls.SetChildIndex(this.pnl_BarraForms, 0);
             this.Controls.SetChildIndex(this.lbl_CodigoDelProducto, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
-            this.Controls.SetChildIndex(this.txt_CodigoProductoIngresado, 0);
             this.Controls.SetChildIndex(this.txt_CantidadStockProductoIngresado, 0);
             this.Controls.SetChildIndex(this.txt_PrecioUnidadProductoIngresado, 0);
             this.Controls.SetChildIndex(this.label6, 0);

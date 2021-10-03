@@ -25,7 +25,7 @@ namespace Comercio
         private void btn_DescargarStock_Click(object sender, EventArgs e)
         {
             StringBuilder stock = new StringBuilder();
-            foreach (Producto producto in Producto.ListaProductos)
+            foreach (Producto producto in CoreDelSistema.ListaProductos)
             {
                 stock.AppendLine($"{producto.Codigo},{producto.Nombre},{producto.Caracteristicas},{producto.TipoProducto},{producto.Cantidad},{producto.PrecioUnitario}");
             }
@@ -66,7 +66,7 @@ namespace Comercio
                 productoBuscado = Producto.BuscarProducto(txt_CodigoProductoIngresado.Text);
                 if (productoBuscado != null &&
                     MessageBox.Show($"{productoBuscado.MostrarDatosCompletos()}\nDesea confirmar la baja?", "Confirmacion, baja producto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes &&
-                    Producto.ListaProductos.Remove(productoBuscado))
+                    CoreDelSistema.ListaProductos.Remove(productoBuscado))
                 {
                     LimpiarListasProductos();
                     txt_CodigoProductoIngresado.Text = "";
@@ -92,6 +92,21 @@ namespace Comercio
         private void FrmABMProducto_Load(object sender, EventArgs e)
         {
             lbl_TituloForms.Text = "STOCK PRODUCTOS";
+        }
+
+        private void btn_ModificarProducto_Click(object sender, EventArgs e)
+        {
+            if(productoBuscado != null)
+            {
+                FrmAltaModificarProducto formAltaModificarProducto = new FrmAltaModificarProducto(productoBuscado);
+                formAltaModificarProducto.ShowDialog();
+            }
+        }
+
+        private void btn_AgregarProducto_Click(object sender, EventArgs e)
+        {
+            FrmAltaModificarProducto formAltaModificarProducto = new FrmAltaModificarProducto(true);
+            formAltaModificarProducto.ShowDialog();
         }
     }
 }

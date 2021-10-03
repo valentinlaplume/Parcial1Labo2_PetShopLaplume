@@ -236,7 +236,7 @@ namespace Comercio
         private void lst_Codigo_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_CodigoProductoIngresado.Text = lst_Codigo.SelectedItem.ToString();
-            Producto productoSeleccionado = Producto.ListaProductos.Where(p => p.Codigo == lst_Codigo.SelectedItem.ToString()).FirstOrDefault();
+            Producto productoSeleccionado = CoreDelSistema.ListaProductos.Where(p => p.Codigo == lst_Codigo.SelectedItem.ToString()).FirstOrDefault();
             if (productoSeleccionado != null)
             {
                 pb_FotoProducto.ImageLocation = productoSeleccionado.UrlImagen;

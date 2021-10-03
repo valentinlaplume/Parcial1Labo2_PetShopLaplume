@@ -35,7 +35,7 @@ namespace Comercio
         #region Cargar campos
         private void CargarCamposConInfoProducto()
         {
-            txt_CodigoProductoIngresado.Text = productoAModificar.Codigo;
+            //txt_CodigoProductoIngresado.Text = productoAModificar.Codigo;
             txt_NombreProductoIngresado.Text = productoAModificar.Nombre;
             txt_CaracteristicasProductoIngresado.Text = productoAModificar.Caracteristicas;
             txt_CantidadStockProductoIngresado.Text = productoAModificar.Cantidad.ToString();
@@ -110,6 +110,7 @@ namespace Comercio
 
         private void btn_GenerarCodigo_Click(object sender, EventArgs e)
         {
+            
             txt_CodigoProductoIngresado.Text = GeneradorCodigo.GeneradorCodigoProducto();
         }
     }
