@@ -49,7 +49,7 @@ namespace Comercio
         {
             if (!string.IsNullOrEmpty(dni) && Usuario.EsValidoDni(dni))
             {
-                foreach (KeyValuePair<string, Cliente> item in Cliente.ListaClientes)
+                foreach (KeyValuePair<string, Cliente> item in CoreDelSistema.ListaClientes)
                 {
                     if (item.Value.Dni == dni)
                         return item.Value;

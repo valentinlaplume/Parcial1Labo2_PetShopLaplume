@@ -43,10 +43,10 @@ namespace Comercio
         #region BUSCAR DNI - OBTENER DNI
         private void btn_BuscarDni_Click(object sender, EventArgs e)
         {
-            if (Cliente.ListaClientes.ContainsKey(txt_DniABuscar.Text))
+            if (CoreDelSistema.ListaClientes.ContainsKey(txt_DniABuscar.Text))
             {
                 lbl_DniNoEncontrado.Visible = false;
-                this.clienteSeleccionado = Cliente.ListaClientes[txt_DniABuscar.Text];
+                this.clienteSeleccionado = CoreDelSistema.ListaClientes[txt_DniABuscar.Text];
                 dgv_ListadoClientes.Rows.Clear();
                 CargarCliente(this.clienteSeleccionado);
             }
@@ -58,7 +58,7 @@ namespace Comercio
 
         private string GetDniClientePorDataGrid()
         {
-            if (Cliente.ListaClientes.ContainsKey(this.dgv_ListadoClientes.CurrentRow.Cells[0].Value.ToString()))
+            if (CoreDelSistema.ListaClientes.ContainsKey(this.dgv_ListadoClientes.CurrentRow.Cells[0].Value.ToString()))
             {
                 return this.dgv_ListadoClientes.CurrentRow.Cells[0].Value.ToString();
             }
@@ -82,7 +82,7 @@ namespace Comercio
                 if(GetDniClientePorDataGrid() != string.Empty)
                 {
                     Size = new Size(751, 273);
-                    this.clienteSeleccionado = Cliente.ListaClientes[GetDniClientePorDataGrid()];
+                    this.clienteSeleccionado = CoreDelSistema.ListaClientes[GetDniClientePorDataGrid()];
                     lbl_DatoCapturado.BackColor = Color.Transparent;
                     lbl_DatoCapturado.Text = ($"Cliente seleccionado: {this.clienteSeleccionado.Nombre} {this.clienteSeleccionado.Apellido}");
 
@@ -117,7 +117,7 @@ namespace Comercio
         private void CargarClientes()
         {
             dgv_ListadoClientes.Rows.Clear();
-            foreach (KeyValuePair<string, Cliente> item in Cliente.ListaClientes)
+            foreach (KeyValuePair<string, Cliente> item in CoreDelSistema.ListaClientes)
             {
                 this.CargarCliente(item.Value);
             }
@@ -134,12 +134,6 @@ namespace Comercio
             }
             else
                 MessageBox.Show("No se a seleccionado un Cliente", "Error al querer ver compras del Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            // listaFacturas
-            // float totalCompras;
-            //totalCompras += factuara.CalcularTotal();
-            // factuara.RetornarFactura() // la vista, agregarlo a una lista
-
-
         }
         #endregion
 
@@ -198,7 +192,7 @@ namespace Comercio
                 if(clienteAgregado != null)
                 {
                     Size = new Size(767, 308);
-                    Cliente.ListaClientes.Add(txt_DniIngresado.Text, clienteAgregado);
+                    CoreDelSistema.ListaClientes.Add(txt_DniIngresado.Text, clienteAgregado);
                     btn_ConfirmarAlta.Enabled = true;
 
                     lbl_DatoCapturado.BackColor = Color.Lime;
@@ -216,7 +210,7 @@ namespace Comercio
         {
             if(this.clienteSeleccionado != null &&
                MessageBox.Show($"{this.clienteSeleccionado.MostrarDatosCompletos()}\nDesea confirmar la baja?", "Confirmacion, baja Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes &&
-               Cliente.ListaClientes.Remove(this.clienteSeleccionado.Dni))
+               CoreDelSistema.ListaClientes.Remove(this.clienteSeleccionado.Dni))
             {
                 Size = new Size(767, 308);
                 lbl_DatoCapturado.BackColor = Color.Lime;

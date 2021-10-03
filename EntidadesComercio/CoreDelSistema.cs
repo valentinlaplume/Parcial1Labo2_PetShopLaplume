@@ -10,12 +10,40 @@ namespace EntidadesComercio
     static public class CoreDelSistema
     {
         private static List<Producto> listaProductos;
+        private static Dictionary<string, Cliente> listaClientes;
 
         static CoreDelSistema()
         {
             listaProductos = new List<Producto>();
+            listaClientes = new Dictionary<string, Cliente>();
+
             HarcodeoProductos();
+            HarcodeoClientes();
         }
+
+        #region CLIENTES
+        static private void HarcodeoClientes()
+        {
+            ListaClientes.Add("35555555", new Cliente("Sofia", "Regino", "35555555", new Random().Next(1000, 10000)));
+            ListaClientes.Add("36666666", new Cliente("Carla", "Lopez", "36666666", new Random().Next(1000, 10000)));
+            ListaClientes.Add("37777777", new Cliente("Jose", "Listorti", "37777777", new Random().Next(1000, 10000)));
+            ListaClientes.Add("38888888", new Cliente("Marcelo", "Tinelli", "38888888", new Random().Next(1000, 10000)));
+        }
+
+        public static Dictionary<string, Cliente> ListaClientes
+        {
+            get => listaClientes;
+            set
+            {
+                if (value != null)
+                    listaClientes = value;
+                else
+                    listaClientes = new Dictionary<string, Cliente>();
+            }
+        }
+        #endregion
+
+        #region PRODUCTOS
 
         static private void HarcodeoProductos()
         {
@@ -68,6 +96,7 @@ namespace EntidadesComercio
             }
         }
 
+        #endregion
 
 
 

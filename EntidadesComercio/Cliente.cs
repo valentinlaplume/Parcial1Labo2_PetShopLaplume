@@ -7,7 +7,6 @@ namespace EntidadesComercio
 {
     public class Cliente : Persona
     {
-        private static Dictionary<string, Cliente> listaClientes;
         private float billetera;
         private List<Factura> facturas;
         private int cantidadCompras;
@@ -16,11 +15,7 @@ namespace EntidadesComercio
 
         static Cliente()
         {
-            ListaClientes = new Dictionary<string, Cliente>();
-            ListaClientes.Add("35555555", new Cliente("Sofia", "Regino", "35555555", new Random().Next(1000, 10000)));
-            ListaClientes.Add("36666666", new Cliente("Carla", "Lopez", "36666666", new Random().Next(1000, 10000)));
-            ListaClientes.Add("37777777", new Cliente("Jose", "Listorti", "37777777", new Random().Next(1000, 10000)));
-            ListaClientes.Add("38888888", new Cliente("Marcelo", "Tinelli", "38888888", new Random().Next(1000, 10000)));
+            
         }
 
         public Cliente() : base(string.Empty, string.Empty, string.Empty)
@@ -44,17 +39,7 @@ namespace EntidadesComercio
         #endregion
 
         #region Propiedades
-        public static Dictionary<string, Cliente> ListaClientes
-        {
-            get => listaClientes;
-            set
-            {
-                if (value != null)
-                    listaClientes = value;
-                else
-                    listaClientes = new Dictionary<string, Cliente>();
-            }
-        }
+      
         public List<Factura> Facturas
         {
             get => facturas;
