@@ -1,0 +1,12 @@
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\bin\Debug\net5.0\Ventas.deps.json
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\bin\Debug\net5.0\Ventas.dll
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\bin\Debug\net5.0\ref\Ventas.dll
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\bin\Debug\net5.0\Ventas.pdb
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\obj\Debug\net5.0\Ventas.csproj.AssemblyReference.cache
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\obj\Debug\net5.0\Ventas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\obj\Debug\net5.0\Ventas.AssemblyInfoInputs.cache
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\obj\Debug\net5.0\Ventas.AssemblyInfo.cs
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\obj\Debug\net5.0\Ventas.csproj.CoreCompileInputs.cache
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\obj\Debug\net5.0\Ventas.dll
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\obj\Debug\net5.0\ref\Ventas.dll
+C:\Users\valentin\source\repos\PetShop_Laplume\Ventas\obj\Debug\net5.0\Ventas.pdb

@@ -1,0 +1,15 @@
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\bin\Debug\net5.0\EntidadesComercio.deps.json
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\bin\Debug\net5.0\EntidadesComercio.dll
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\bin\Debug\net5.0\ref\EntidadesComercio.dll
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\bin\Debug\net5.0\EntidadesComercio.pdb
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\bin\Debug\net5.0\Ventas.dll
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\bin\Debug\net5.0\Ventas.pdb
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\obj\Debug\net5.0\EntidadesComercio.csproj.AssemblyReference.cache
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\obj\Debug\net5.0\EntidadesComercio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\obj\Debug\net5.0\EntidadesComercio.AssemblyInfoInputs.cache
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\obj\Debug\net5.0\EntidadesComercio.AssemblyInfo.cs
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\obj\Debug\net5.0\EntidadesComercio.csproj.CoreCompileInputs.cache
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\obj\Debug\net5.0\EntidadesComercio.csproj.CopyComplete
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\obj\Debug\net5.0\EntidadesComercio.dll
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\obj\Debug\net5.0\ref\EntidadesComercio.dll
+C:\Users\valentin\source\repos\PetShop_Laplume\EntidadesComercio\obj\Debug\net5.0\EntidadesComercio.pdb

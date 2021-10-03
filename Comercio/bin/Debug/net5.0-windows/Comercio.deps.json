@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Comercio/1.0.0": {
+        "dependencies": {
+          "EntidadesComercio": "1.0.0",
+          "Ventas": "1.0.0"
+        },
+        "runtime": {
+          "Comercio.dll": {}
+        }
+      },
+      "EntidadesComercio/1.0.0": {
+        "dependencies": {
+          "Ventas": "1.0.0"
+        },
+        "runtime": {
+          "EntidadesComercio.dll": {}
+        }
+      },
+      "Ventas/1.0.0": {
+        "runtime": {
+          "Ventas.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Comercio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntidadesComercio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Ventas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
