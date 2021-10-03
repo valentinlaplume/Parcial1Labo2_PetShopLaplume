@@ -26,6 +26,8 @@ namespace Comercio
 
         private void FrmPrincipalMenu_Load(object sender, EventArgs e)
         {
+            MinimumSize = Size;
+            MaximumSize = Size;
             AccesosEmpleado();
         }
 

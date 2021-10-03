@@ -39,12 +39,12 @@ namespace Comercio
             this.pb_CerrarAplicacion = new System.Windows.Forms.PictureBox();
             this.pb_ImagenPerfilUsuario = new System.Windows.Forms.PictureBox();
             this.pnl_FondoImagenUsuario = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pb_Logo = new System.Windows.Forms.PictureBox();
             this.cmb_Usuario = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarAplicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ImagenPerfilUsuario)).BeginInit();
             this.pnl_FondoImagenUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_IniciarSesion
@@ -157,17 +157,17 @@ namespace Comercio
             this.pnl_FondoImagenUsuario.Size = new System.Drawing.Size(186, 173);
             this.pnl_FondoImagenUsuario.TabIndex = 26;
             // 
-            // pictureBox1
+            // pb_Logo
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Enabled = false;
-            this.pictureBox1.Image = global::Comercio.Properties.Resources.logoPetShopNegro;
-            this.pictureBox1.Location = new System.Drawing.Point(-21, -6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(406, 343);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
+            this.pb_Logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(187)))), ((int)(((byte)(240)))));
+            this.pb_Logo.Enabled = false;
+            this.pb_Logo.Image = global::Comercio.Properties.Resources.logoPetShopNegro;
+            this.pb_Logo.Location = new System.Drawing.Point(-3, -2);
+            this.pb_Logo.Name = "pb_Logo";
+            this.pb_Logo.Size = new System.Drawing.Size(353, 339);
+            this.pb_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_Logo.TabIndex = 27;
+            this.pb_Logo.TabStop = false;
             // 
             // cmb_Usuario
             // 
@@ -192,7 +192,7 @@ namespace Comercio
             this.Controls.Add(this.cmb_Usuario);
             this.Controls.Add(this.btn_IniciarSesion);
             this.Controls.Add(this.prg_BarraInicioSesion);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pb_Logo);
             this.Controls.Add(this.pnl_FondoImagenUsuario);
             this.Controls.Add(this.pb_CerrarAplicacion);
             this.Controls.Add(this.label1);
@@ -208,7 +208,7 @@ namespace Comercio
             ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarAplicacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ImagenPerfilUsuario)).EndInit();
             this.pnl_FondoImagenUsuario.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,7 +225,7 @@ namespace Comercio
         private System.Windows.Forms.PictureBox pb_CerrarAplicacion;
         private System.Windows.Forms.PictureBox pb_ImagenPerfilUsuario;
         private System.Windows.Forms.Panel pnl_FondoImagenUsuario;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pb_Logo;
         private System.Windows.Forms.ComboBox cmb_Usuario;
     }
 }

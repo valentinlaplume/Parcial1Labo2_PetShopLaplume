@@ -40,7 +40,7 @@ namespace Comercio
             // lst_ListaFacturasCliente
             // 
             this.lst_ListaFacturasCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lst_ListaFacturasCliente.BackColor = System.Drawing.SystemColors.Info;
+            this.lst_ListaFacturasCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(187)))), ((int)(((byte)(240)))));
             this.lst_ListaFacturasCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lst_ListaFacturasCliente.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lst_ListaFacturasCliente.ForeColor = System.Drawing.SystemColors.InfoText;
@@ -91,7 +91,7 @@ namespace Comercio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(70)))), ((int)(((byte)(116)))));
             this.ClientSize = new System.Drawing.Size(634, 365);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.pb_CerrarAplicacion);

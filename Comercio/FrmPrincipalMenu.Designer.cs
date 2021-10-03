@@ -103,18 +103,18 @@ namespace Comercio
             // lbl_Trabajadores
             // 
             this.lbl_Trabajadores.AutoSize = true;
-            this.lbl_Trabajadores.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Trabajadores.Location = new System.Drawing.Point(9, 98);
+            this.lbl_Trabajadores.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Trabajadores.Location = new System.Drawing.Point(8, 102);
             this.lbl_Trabajadores.Name = "lbl_Trabajadores";
-            this.lbl_Trabajadores.Size = new System.Drawing.Size(168, 29);
+            this.lbl_Trabajadores.Size = new System.Drawing.Size(172, 29);
             this.lbl_Trabajadores.TabIndex = 4;
             this.lbl_Trabajadores.Text = "TRABAJADORES";
             // 
             // lbl_Usuarios
             // 
             this.lbl_Usuarios.AutoSize = true;
-            this.lbl_Usuarios.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Usuarios.Location = new System.Drawing.Point(228, 98);
+            this.lbl_Usuarios.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Usuarios.Location = new System.Drawing.Point(228, 102);
             this.lbl_Usuarios.Name = "lbl_Usuarios";
             this.lbl_Usuarios.Size = new System.Drawing.Size(105, 29);
             this.lbl_Usuarios.TabIndex = 5;
@@ -123,20 +123,20 @@ namespace Comercio
             // lbl_Ventas
             // 
             this.lbl_Ventas.AutoSize = true;
-            this.lbl_Ventas.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Ventas.Location = new System.Drawing.Point(423, 98);
+            this.lbl_Ventas.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Ventas.Location = new System.Drawing.Point(423, 102);
             this.lbl_Ventas.Name = "lbl_Ventas";
-            this.lbl_Ventas.Size = new System.Drawing.Size(90, 29);
+            this.lbl_Ventas.Size = new System.Drawing.Size(91, 29);
             this.lbl_Ventas.TabIndex = 6;
             this.lbl_Ventas.Text = "VENTAS";
             // 
             // lbl_Productos
             // 
             this.lbl_Productos.AutoSize = true;
-            this.lbl_Productos.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Productos.Location = new System.Drawing.Point(590, 98);
+            this.lbl_Productos.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Productos.Location = new System.Drawing.Point(590, 102);
             this.lbl_Productos.Name = "lbl_Productos";
-            this.lbl_Productos.Size = new System.Drawing.Size(135, 29);
+            this.lbl_Productos.Size = new System.Drawing.Size(138, 29);
             this.lbl_Productos.TabIndex = 7;
             this.lbl_Productos.Text = "PRODUCTOS";
             // 
@@ -146,14 +146,14 @@ namespace Comercio
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(748, 297);
-            this.Controls.Add(this.lbl_Productos);
-            this.Controls.Add(this.lbl_Ventas);
-            this.Controls.Add(this.lbl_Usuarios);
-            this.Controls.Add(this.lbl_Trabajadores);
             this.Controls.Add(this.pb_MenuProductos);
             this.Controls.Add(this.pb_MenuVentas);
             this.Controls.Add(this.pb_MenuCliente);
             this.Controls.Add(this.pb_MenuTrabajadora);
+            this.Controls.Add(this.lbl_Productos);
+            this.Controls.Add(this.lbl_Ventas);
+            this.Controls.Add(this.lbl_Usuarios);
+            this.Controls.Add(this.lbl_Trabajadores);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmPrincipalMenu";

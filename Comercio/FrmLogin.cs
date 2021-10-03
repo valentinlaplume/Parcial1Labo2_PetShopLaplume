@@ -80,11 +80,11 @@ namespace Comercio
             {
                 prg_BarraInicioSesion.Visible = true;
                 Usuario user = Usuario.BuscarUsuario(cmb_Usuario.Text);
-                FrmMenuPrincipal formMenuPrincipal = new FrmMenuPrincipal(user);
+                FrmPrincipalMenu formPrincipalMenu = new FrmPrincipalMenu(user);
                 if (BarraInicioSesion())
                 {
-                    formMenuPrincipal.Text = $"{formMenuPrincipal.Text} - {DateTime.Now} - {user.TipoUsuario} - {user.UsuarioPropiedad}";
-                    formMenuPrincipal.Show();
+                    formPrincipalMenu.Text = $"{formPrincipalMenu.Text} - {DateTime.Now} - {user.TipoUsuario} - {user.UsuarioPropiedad}";
+                    formPrincipalMenu.Show();
                     this.Hide();
                 }
             }

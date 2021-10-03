@@ -73,7 +73,7 @@ namespace Comercio
             // 
             // pbl_MenuCliente
             // 
-            pbl_MenuCliente.BackColor = System.Drawing.Color.Black;
+            pbl_MenuCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(187)))), ((int)(((byte)(240)))));
             pbl_MenuCliente.Controls.Add(this.btn_VerTodosClientes);
             pbl_MenuCliente.Controls.Add(this.lbl_DniNoEncontrado);
             pbl_MenuCliente.Controls.Add(this.btn_Agregar);
@@ -137,7 +137,7 @@ namespace Comercio
             this.lbl_DatoCapturado.AutoSize = true;
             this.lbl_DatoCapturado.BackColor = System.Drawing.Color.Transparent;
             this.lbl_DatoCapturado.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_DatoCapturado.ForeColor = System.Drawing.Color.White;
+            this.lbl_DatoCapturado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl_DatoCapturado.Location = new System.Drawing.Point(202, 243);
             this.lbl_DatoCapturado.Name = "lbl_DatoCapturado";
             this.lbl_DatoCapturado.Size = new System.Drawing.Size(183, 23);
@@ -149,7 +149,7 @@ namespace Comercio
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(9, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 33);
@@ -263,7 +263,7 @@ namespace Comercio
             this.lbl_IngreseDni.AutoSize = true;
             this.lbl_IngreseDni.BackColor = System.Drawing.Color.Transparent;
             this.lbl_IngreseDni.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_IngreseDni.ForeColor = System.Drawing.Color.White;
+            this.lbl_IngreseDni.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl_IngreseDni.Location = new System.Drawing.Point(198, 27);
             this.lbl_IngreseDni.Name = "lbl_IngreseDni";
             this.lbl_IngreseDni.Size = new System.Drawing.Size(82, 18);

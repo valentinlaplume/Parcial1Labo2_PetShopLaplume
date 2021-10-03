@@ -223,7 +223,7 @@ namespace Comercio
             // cmb_TipoUsuarios
             // 
             this.cmb_TipoUsuarios.FormattingEnabled = true;
-            this.cmb_TipoUsuarios.Location = new System.Drawing.Point(108, 10);
+            this.cmb_TipoUsuarios.Location = new System.Drawing.Point(107, 19);
             this.cmb_TipoUsuarios.Name = "cmb_TipoUsuarios";
             this.cmb_TipoUsuarios.Size = new System.Drawing.Size(121, 23);
             this.cmb_TipoUsuarios.TabIndex = 0;
@@ -234,8 +234,8 @@ namespace Comercio
             this.lbl_FiltrarPor.AutoSize = true;
             this.lbl_FiltrarPor.BackColor = System.Drawing.Color.Transparent;
             this.lbl_FiltrarPor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_FiltrarPor.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_FiltrarPor.Location = new System.Drawing.Point(12, 16);
+            this.lbl_FiltrarPor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbl_FiltrarPor.Location = new System.Drawing.Point(11, 25);
             this.lbl_FiltrarPor.Name = "lbl_FiltrarPor";
             this.lbl_FiltrarPor.Size = new System.Drawing.Size(76, 19);
             this.lbl_FiltrarPor.TabIndex = 13;
@@ -425,7 +425,7 @@ namespace Comercio
             // 
             // txt_LegajoABuscar
             // 
-            this.txt_LegajoABuscar.Location = new System.Drawing.Point(394, 10);
+            this.txt_LegajoABuscar.Location = new System.Drawing.Point(393, 19);
             this.txt_LegajoABuscar.Name = "txt_LegajoABuscar";
             this.txt_LegajoABuscar.PlaceholderText = "INGRESE LEGAJO";
             this.txt_LegajoABuscar.Size = new System.Drawing.Size(134, 23);
@@ -437,8 +437,8 @@ namespace Comercio
             this.lbl_BuscarLegajo.AutoSize = true;
             this.lbl_BuscarLegajo.BackColor = System.Drawing.Color.Transparent;
             this.lbl_BuscarLegajo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_BuscarLegajo.ForeColor = System.Drawing.SystemColors.Control;
-            this.lbl_BuscarLegajo.Location = new System.Drawing.Point(287, 14);
+            this.lbl_BuscarLegajo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbl_BuscarLegajo.Location = new System.Drawing.Point(286, 23);
             this.lbl_BuscarLegajo.Name = "lbl_BuscarLegajo";
             this.lbl_BuscarLegajo.Size = new System.Drawing.Size(101, 19);
             this.lbl_BuscarLegajo.TabIndex = 36;
@@ -452,7 +452,7 @@ namespace Comercio
             this.btn_BuscarLegajo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_BuscarLegajo.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_BuscarLegajo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_BuscarLegajo.Location = new System.Drawing.Point(534, 10);
+            this.btn_BuscarLegajo.Location = new System.Drawing.Point(533, 19);
             this.btn_BuscarLegajo.Name = "btn_BuscarLegajo";
             this.btn_BuscarLegajo.Size = new System.Drawing.Size(79, 23);
             this.btn_BuscarLegajo.TabIndex = 2;
@@ -505,8 +505,8 @@ namespace Comercio
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(9, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 18);
@@ -527,11 +527,11 @@ namespace Comercio
             this.btn_AgregarUsuario.UseVisualStyleBackColor = false;
             this.btn_AgregarUsuario.Click += new System.EventHandler(this.btn_AgregarUsuario_Click);
             // 
-            // FrmBaseUsuario
+            // FrmABMTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(187)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(850, 435);
             this.Controls.Add(this.txt_ApellidoIngresado);
             this.Controls.Add(this.txt_NombreIngresado);
@@ -555,7 +555,7 @@ namespace Comercio
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FrmBaseUsuario";
+            this.Name = "FrmABMTrabajador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmBaseUsuarios";
             this.Load += new System.EventHandler(this.FrmBaseUsuario_Load);

@@ -359,7 +359,7 @@ namespace Comercio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(70)))), ((int)(((byte)(116)))));
             this.ClientSize = new System.Drawing.Size(631, 475);
             this.Controls.Add(this.lbl_Titulo);
             this.Controls.Add(this.lbl_AltaConfirmada);
