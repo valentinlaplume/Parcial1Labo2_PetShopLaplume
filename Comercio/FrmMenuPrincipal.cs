@@ -144,5 +144,10 @@ namespace Comercio
             formCliente.ShowDialog();
         }
 
+        private void pruebaMenu2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPrincipalMenu fr = new FrmPrincipalMenu();
+            fr.Show();
+        }
     }
 }

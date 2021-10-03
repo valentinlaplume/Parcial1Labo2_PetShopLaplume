@@ -28,10 +28,10 @@
     <Compile Update="FrmModificarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmStockProductos.cs">
+    <Compile Update="FrmComprasTotalesCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmComprasTotalesCliente.cs">
+    <Compile Update="FrmPrincipalMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmVender.cs">

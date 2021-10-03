@@ -113,6 +113,16 @@ namespace Comercio.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ClienteSatisfecho {
+            get {
+                object obj = ResourceManager.GetObject("ClienteSatisfecho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CodigoQr {
             get {
                 object obj = ResourceManager.GetObject("CodigoQr", resourceCulture);
@@ -126,6 +136,16 @@ namespace Comercio.Properties {
         internal static System.Drawing.Bitmap en_blanco {
             get {
                 object obj = ResourceManager.GetObject("en blanco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InventarioProducto {
+            get {
+                object obj = ResourceManager.GetObject("InventarioProducto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +173,29 @@ namespace Comercio.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Usuarios {
+            get {
+                object obj = ResourceManager.GetObject("Usuarios", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap usuarioSinFoto {
             get {
                 object obj = ResourceManager.GetObject("usuarioSinFoto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vender {
+            get {
+                object obj = ResourceManager.GetObject("vender", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

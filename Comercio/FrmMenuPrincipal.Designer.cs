@@ -58,6 +58,7 @@ namespace Comercio
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsr_RealizarVenta = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pruebaMenu2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +67,8 @@ namespace Comercio
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.ventasToolStripMenuItem1,
-            this.informesToolStripMenuItem});
+            this.informesToolStripMenuItem,
+            this.pruebaMenu2ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(914, 24);
@@ -193,27 +195,27 @@ namespace Comercio
             // tsr_ListarUsuarios
             // 
             this.tsr_ListarUsuarios.Name = "tsr_ListarUsuarios";
-            this.tsr_ListarUsuarios.Size = new System.Drawing.Size(175, 22);
+            this.tsr_ListarUsuarios.Size = new System.Drawing.Size(180, 22);
             this.tsr_ListarUsuarios.Text = "Usuarios";
             this.tsr_ListarUsuarios.Click += new System.EventHandler(this.tsr_ListarUsuarios_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clientesToolStripMenuItem.Text = "Empleados";
             // 
             // verInformacionDelUsuarioToolStripMenuItem
             // 
             this.verInformacionDelUsuarioToolStripMenuItem.Name = "verInformacionDelUsuarioToolStripMenuItem";
-            this.verInformacionDelUsuarioToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.verInformacionDelUsuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verInformacionDelUsuarioToolStripMenuItem.Text = "Clientes";
             this.verInformacionDelUsuarioToolStripMenuItem.Click += new System.EventHandler(this.verInformacionDelUsuarioToolStripMenuItem_Click);
             // 
             // verMiInformaciónToolStripMenuItem
             // 
             this.verMiInformaciónToolStripMenuItem.Name = "verMiInformaciónToolStripMenuItem";
-            this.verMiInformaciónToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.verMiInformaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verMiInformaciónToolStripMenuItem.Text = "Ver mi información";
             // 
             // tsr_cerrarSesión
@@ -275,6 +277,13 @@ namespace Comercio
             this.consultarVentasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.consultarVentasToolStripMenuItem.Text = "Consultar ventas";
             // 
+            // pruebaMenu2ToolStripMenuItem
+            // 
+            this.pruebaMenu2ToolStripMenuItem.Name = "pruebaMenu2ToolStripMenuItem";
+            this.pruebaMenu2ToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
+            this.pruebaMenu2ToolStripMenuItem.Text = "prueba menu 2";
+            this.pruebaMenu2ToolStripMenuItem.Click += new System.EventHandler(this.pruebaMenu2ToolStripMenuItem_Click);
+            // 
             // FrmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -331,5 +340,6 @@ namespace Comercio
         private System.Windows.Forms.ToolStripMenuItem consultarVentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsr_cerrarSesión;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem pruebaMenu2ToolStripMenuItem;
     }
 }

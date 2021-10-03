@@ -211,6 +211,11 @@ namespace Comercio
             EntidadesComercio.EnumTipoProducto.Juguete,
             EntidadesComercio.EnumTipoProducto.Comodidad,
             EntidadesComercio.EnumTipoProducto.Limpieza,
+            EntidadesComercio.EnumTipoProducto.Farmacia,
+            EntidadesComercio.EnumTipoProducto.Alimento,
+            EntidadesComercio.EnumTipoProducto.Juguete,
+            EntidadesComercio.EnumTipoProducto.Comodidad,
+            EntidadesComercio.EnumTipoProducto.Limpieza,
             EntidadesComercio.EnumTipoProducto.Farmacia});
             this.cmb_TiposProductos.Location = new System.Drawing.Point(86, 21);
             // 
@@ -472,7 +477,7 @@ namespace Comercio
             this.pictureBox1.Image = global::Comercio.Properties.Resources.pngLogoMercadoPago;
             this.pictureBox1.Location = new System.Drawing.Point(525, 398);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(97, 29);
+            this.pictureBox1.Size = new System.Drawing.Size(104, 29);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 60;
             this.pictureBox1.TabStop = false;

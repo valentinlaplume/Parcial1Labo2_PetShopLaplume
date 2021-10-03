@@ -82,7 +82,7 @@ namespace Comercio
             // 
             // lbl_TituloForms
             // 
-            this.lbl_TituloForms.ForeColor = System.Drawing.Color.Cyan;
+            this.lbl_TituloForms.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl_TituloForms.Location = new System.Drawing.Point(278, 26);
             this.lbl_TituloForms.Size = new System.Drawing.Size(314, 29);
             this.lbl_TituloForms.Text = "MODIFICACIÓN DE PRODUCTO";
@@ -114,13 +114,18 @@ namespace Comercio
             // 
             this.lbl_TipoProducto.BackColor = System.Drawing.Color.Transparent;
             this.lbl_TipoProducto.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_TipoProducto.ForeColor = System.Drawing.Color.White;
+            this.lbl_TipoProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl_TipoProducto.Location = new System.Drawing.Point(17, 36);
             this.lbl_TipoProducto.Visible = false;
             // 
             // cmb_TiposProductos
             // 
             this.cmb_TiposProductos.Items.AddRange(new object[] {
+            EntidadesComercio.EnumTipoProducto.Alimento,
+            EntidadesComercio.EnumTipoProducto.Juguete,
+            EntidadesComercio.EnumTipoProducto.Comodidad,
+            EntidadesComercio.EnumTipoProducto.Limpieza,
+            EntidadesComercio.EnumTipoProducto.Farmacia,
             EntidadesComercio.EnumTipoProducto.Alimento,
             EntidadesComercio.EnumTipoProducto.Juguete,
             EntidadesComercio.EnumTipoProducto.Comodidad,
@@ -250,7 +255,7 @@ namespace Comercio
             // 
             // lbl_CodigoDelProducto
             // 
-            this.lbl_CodigoDelProducto.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbl_CodigoDelProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl_CodigoDelProducto.Location = new System.Drawing.Point(14, 178);
             this.lbl_CodigoDelProducto.Size = new System.Drawing.Size(44, 15);
             this.lbl_CodigoDelProducto.Text = "Codigo";
@@ -274,9 +279,10 @@ namespace Comercio
             this.btn_ModificarProducto.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_ModificarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ModificarProducto.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_ModificarProducto.Location = new System.Drawing.Point(739, 288);
+            this.btn_ModificarProducto.ForeColor = System.Drawing.Color.Black;
+            this.btn_ModificarProducto.Location = new System.Drawing.Point(739, 296);
             this.btn_ModificarProducto.Name = "btn_ModificarProducto";
-            this.btn_ModificarProducto.Size = new System.Drawing.Size(124, 44);
+            this.btn_ModificarProducto.Size = new System.Drawing.Size(124, 36);
             this.btn_ModificarProducto.TabIndex = 6;
             this.btn_ModificarProducto.Text = "CONFIRMAR";
             this.btn_ModificarProducto.UseVisualStyleBackColor = false;
@@ -287,7 +293,7 @@ namespace Comercio
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(15, 327);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 15);
@@ -299,7 +305,7 @@ namespace Comercio
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(15, 267);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 15);
@@ -311,7 +317,7 @@ namespace Comercio
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label4.Location = new System.Drawing.Point(14, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 15);
@@ -323,7 +329,7 @@ namespace Comercio
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Location = new System.Drawing.Point(15, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 15);
@@ -335,7 +341,7 @@ namespace Comercio
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.Location = new System.Drawing.Point(15, 207);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 15);
@@ -379,6 +385,7 @@ namespace Comercio
             this.btn_Salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_Salir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Salir.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Salir.ForeColor = System.Drawing.Color.Black;
             this.btn_Salir.Location = new System.Drawing.Point(739, 338);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(124, 33);
@@ -421,7 +428,7 @@ namespace Comercio
             this.lbl_UrlImagenProducto.AutoSize = true;
             this.lbl_UrlImagenProducto.BackColor = System.Drawing.Color.Transparent;
             this.lbl_UrlImagenProducto.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_UrlImagenProducto.ForeColor = System.Drawing.Color.White;
+            this.lbl_UrlImagenProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl_UrlImagenProducto.Location = new System.Drawing.Point(14, 356);
             this.lbl_UrlImagenProducto.Name = "lbl_UrlImagenProducto";
             this.lbl_UrlImagenProducto.Size = new System.Drawing.Size(98, 15);
@@ -448,7 +455,7 @@ namespace Comercio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(187)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(870, 387);
             this.Controls.Add(this.btn_GenerarCodigo);
             this.Controls.Add(this.lbl_UrlImagenProducto);
@@ -466,7 +473,7 @@ namespace Comercio
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_PrecioUnidadProductoIngresado);
             this.Controls.Add(this.txt_CantidadStockProductoIngresado);
-            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(187)))), ((int)(((byte)(240)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmModificarProducto";
             this.Text = "Modificar Producto";
