@@ -26,6 +26,14 @@ namespace Comercio
 
         private void FrmPrincipalMenu_Load(object sender, EventArgs e)
         {
+            if (Usuario.UsuarioLogeado.TipoUsuario is EnumTipoUsuario.Administrador)
+            {
+                BackColor = Color.FromArgb(51, 70, 116); 
+            }
+            else { BackColor = Color.FromArgb(159, 187, 240); }
+
+            pb_FotoUsuarioLogeado.ImageLocation = Usuario.UsuarioLogeado.UrlImagen;
+            lbl_LegajoUsuarioLogeado.Text = $"Legajo: {Usuario.UsuarioLogeado.Legajo}";
             MinimumSize = Size;
             MaximumSize = Size;
             AccesosEmpleado();
@@ -65,5 +73,11 @@ namespace Comercio
             formABMProducto.ShowDialog();
         }
 
+        private void pb_CerrarSesion_Click(object sender, EventArgs e)
+        {
+            FrmLogin formLogin = new FrmLogin();
+            this.Close();
+            formLogin.Show();
+        }
     }
 }

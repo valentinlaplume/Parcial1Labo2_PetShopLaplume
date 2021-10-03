@@ -28,16 +28,12 @@ namespace Comercio
             LimpiarCampos();
         }
 
-        private void pb_Cerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
-        }
-
         private void FrmAltaTrabajador_Load(object sender, EventArgs e)
         {
             cmb_TipoUsuarios.Items.Add(EnumTipoUsuario.Administrador);
             cmb_TipoUsuarios.Items.Add(EnumTipoUsuario.Empleado);
+            MinimumSize = Size;
+            MaximumSize = Size;
         }
 
         private void LimpiarCampos()

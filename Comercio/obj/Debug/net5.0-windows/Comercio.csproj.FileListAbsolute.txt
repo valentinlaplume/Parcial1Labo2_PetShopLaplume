@@ -52,8 +52,6 @@ C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows
 C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.FrmCodigoQr.resources
 C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.FrmComprasTotalesCliente.resources
 C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.FrmLogin.resources
-C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.FrmMenuPrincipal.resources
-C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.FrmModificarProducto.resources
 C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.FrmVender.resources
 C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.Properties.Resources.resources
 C:\Users\valentin\Desktop\copia_parcial-master\Comercio\obj\Debug\net5.0-windows\Comercio.csproj.GenerateResource.cache

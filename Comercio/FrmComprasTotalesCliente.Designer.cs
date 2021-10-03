@@ -32,9 +32,7 @@ namespace Comercio
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmComprasTotalesCliente));
             this.lst_ListaFacturasCliente = new System.Windows.Forms.ListBox();
             this.lbl_MontoTotalCliente = new System.Windows.Forms.Label();
-            this.pb_CerrarAplicacion = new System.Windows.Forms.PictureBox();
             this.lbl_Titulo = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarAplicacion)).BeginInit();
             this.SuspendLayout();
             // 
             // lst_ListaFacturasCliente
@@ -63,18 +61,6 @@ namespace Comercio
             this.lbl_MontoTotalCliente.TabIndex = 11;
             this.lbl_MontoTotalCliente.Text = "Monto total por las compras del Cliente:";
             // 
-            // pb_CerrarAplicacion
-            // 
-            this.pb_CerrarAplicacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_CerrarAplicacion.Image = global::Comercio.Properties.Resources.button_x;
-            this.pb_CerrarAplicacion.Location = new System.Drawing.Point(595, 12);
-            this.pb_CerrarAplicacion.Name = "pb_CerrarAplicacion";
-            this.pb_CerrarAplicacion.Size = new System.Drawing.Size(27, 21);
-            this.pb_CerrarAplicacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_CerrarAplicacion.TabIndex = 12;
-            this.pb_CerrarAplicacion.TabStop = false;
-            this.pb_CerrarAplicacion.Click += new System.EventHandler(this.pb_CerrarAplicacion_Click);
-            // 
             // lbl_Titulo
             // 
             this.lbl_Titulo.AutoSize = true;
@@ -94,17 +80,15 @@ namespace Comercio
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(70)))), ((int)(((byte)(116)))));
             this.ClientSize = new System.Drawing.Size(634, 365);
             this.Controls.Add(this.lbl_Titulo);
-            this.Controls.Add(this.pb_CerrarAplicacion);
             this.Controls.Add(this.lbl_MontoTotalCliente);
             this.Controls.Add(this.lst_ListaFacturasCliente);
             this.ForeColor = System.Drawing.SystemColors.Control;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmComprasTotalesCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compras Totales Cliente";
             this.Load += new System.EventHandler(this.FrmComprasTotalesCliente_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarAplicacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,7 +98,6 @@ namespace Comercio
 
         private System.Windows.Forms.ListBox lst_ListaFacturasCliente;
         private System.Windows.Forms.Label lbl_MontoTotalCliente;
-        public System.Windows.Forms.PictureBox pb_CerrarAplicacion;
         private System.Windows.Forms.Label lbl_Titulo;
     }
 }

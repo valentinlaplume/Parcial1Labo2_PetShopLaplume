@@ -33,7 +33,9 @@ namespace Comercio
         #region EVENTOS
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-            Size = new Size(751, 273);
+            Size = new Size(767, 308);
+            MinimumSize = Size;
+            MaximumSize = new Size(767, 457);
         }
         private void pb_CerrarAplicacion_Click(object sender, EventArgs e)
         {
@@ -185,7 +187,7 @@ namespace Comercio
             lbl_AccionARealizar.Text = "ALTA DE UN CLIENTE";
             btn_ConfirmarModificacion.Enabled = false;
             txt_DniIngresado.Enabled = true;
-            Size = new Size(751, 418);
+            Size = new Size(767, 457);
         }
 
         private void btn_ConfirmarAlta_Click(object sender, EventArgs e)
@@ -198,7 +200,7 @@ namespace Comercio
                                                       float.Parse(txt_BilleteraIngresada.Text));
                 if(clienteAgregado != null)
                 {
-                    Size = new Size(751, 273);
+                    Size = new Size(767, 308);
                     Cliente.ListaClientes.Add(txt_DniIngresado.Text, clienteAgregado);
                     btn_ConfirmarAlta.Enabled = true;
 
@@ -219,7 +221,7 @@ namespace Comercio
                MessageBox.Show($"{this.clienteSeleccionado.MostrarDatosCompletos()}\nDesea confirmar la baja?", "Confirmacion, baja Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes &&
                Cliente.ListaClientes.Remove(this.clienteSeleccionado.Dni))
             {
-                Size = new Size(751, 273);
+                Size = new Size(767, 308);
                 lbl_DatoCapturado.BackColor = Color.Lime;
                 lbl_DatoCapturado.Text = "CLIENTE ELIMINADO";
                 this.clienteSeleccionado = new Cliente();
@@ -235,7 +237,7 @@ namespace Comercio
             if(this.clienteSeleccionado != null)
             {
                 lbl_AccionARealizar.Text = "MODIFICACION DEL CLIENTE";
-                Size = new Size(751, 418);
+                Size = new Size(767, 457);
                 btn_ConfirmarModificacion.Enabled = true;
                 btn_ConfirmarAlta.Enabled = false;
 
@@ -264,7 +266,7 @@ namespace Comercio
                 lbl_DatoCapturado.Text = "SE A MODIFICADO EL CLIENTE CORRECTAMENTE";
                 dgv_ListadoClientes.Rows.Clear();
                 CargarCliente(this.clienteSeleccionado);
-                Size = new Size(751, 273);
+                Size = new Size(767, 308);
             }
         }
         #endregion

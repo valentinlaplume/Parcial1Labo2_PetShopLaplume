@@ -50,7 +50,6 @@ namespace Comercio
             this.btn_Modificar = new System.Windows.Forms.Button();
             this.btn_BuscarDni = new System.Windows.Forms.Button();
             this.txt_DniABuscar = new System.Windows.Forms.TextBox();
-            this.pb_CerrarAplicacion = new System.Windows.Forms.PictureBox();
             this.txt_NombreIngresado = new System.Windows.Forms.TextBox();
             this.txt_ApellidoIngresado = new System.Windows.Forms.TextBox();
             this.txt_DniIngresado = new System.Windows.Forms.TextBox();
@@ -67,7 +66,6 @@ namespace Comercio
             pbl_MenuCliente = new System.Windows.Forms.Panel();
             pbl_MenuCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListadoClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarAplicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -312,19 +310,6 @@ namespace Comercio
             this.txt_DniABuscar.TabIndex = 1;
             this.txt_DniABuscar.TextChanged += new System.EventHandler(this.txt_DniABuscar_TextChanged);
             // 
-            // pb_CerrarAplicacion
-            // 
-            this.pb_CerrarAplicacion.BackColor = System.Drawing.Color.Black;
-            this.pb_CerrarAplicacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_CerrarAplicacion.Image = global::Comercio.Properties.Resources.button_x;
-            this.pb_CerrarAplicacion.Location = new System.Drawing.Point(714, 12);
-            this.pb_CerrarAplicacion.Name = "pb_CerrarAplicacion";
-            this.pb_CerrarAplicacion.Size = new System.Drawing.Size(27, 21);
-            this.pb_CerrarAplicacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_CerrarAplicacion.TabIndex = 53;
-            this.pb_CerrarAplicacion.TabStop = false;
-            this.pb_CerrarAplicacion.Click += new System.EventHandler(this.pb_CerrarAplicacion_Click);
-            // 
             // txt_NombreIngresado
             // 
             this.txt_NombreIngresado.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -487,7 +472,6 @@ namespace Comercio
             this.Controls.Add(this.txt_NombreIngresado);
             this.Controls.Add(this.lbl_Dni);
             this.Controls.Add(this.lbl_Nombre);
-            this.Controls.Add(this.pb_CerrarAplicacion);
             this.Controls.Add(this.btn_BuscarDni);
             this.Controls.Add(this.txt_DniABuscar);
             this.Controls.Add(pbl_MenuCliente);
@@ -500,16 +484,15 @@ namespace Comercio
             this.Controls.Add(this.lbl_Error);
             this.Controls.Add(this.btn_ConfirmarModificacion);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cliente";
+            this.Text = "Menu Cliente";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             pbl_MenuCliente.ResumeLayout(false);
             pbl_MenuCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListadoClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarAplicacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -519,7 +502,6 @@ namespace Comercio
         #endregion
         private System.Windows.Forms.Button btn_BuscarDni;
         private System.Windows.Forms.TextBox txt_DniABuscar;
-        public System.Windows.Forms.PictureBox pb_CerrarAplicacion;
         private System.Windows.Forms.TextBox txt_NombreIngresado;
         private System.Windows.Forms.TextBox txt_ApellidoIngresado;
         private System.Windows.Forms.TextBox txt_DniIngresado;

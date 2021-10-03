@@ -113,6 +113,16 @@ namespace Comercio.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CerrarSesion {
+            get {
+                object obj = ResourceManager.GetObject("CerrarSesion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ClienteSatisfecho {
             get {
                 object obj = ResourceManager.GetObject("ClienteSatisfecho", resourceCulture);
@@ -146,6 +156,16 @@ namespace Comercio.Properties {
         internal static System.Drawing.Bitmap InventarioProducto {
             get {
                 object obj = ResourceManager.GetObject("InventarioProducto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_chico {
+            get {
+                object obj = ResourceManager.GetObject("logo chico", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

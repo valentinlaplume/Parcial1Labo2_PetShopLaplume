@@ -54,12 +54,10 @@ namespace Comercio
             this.lbl_Remuneracion = new System.Windows.Forms.Label();
             this.lbl_TipoAcceso = new System.Windows.Forms.Label();
             this.cmb_TipoUsuarios = new System.Windows.Forms.ComboBox();
-            this.pb_Cerrar = new System.Windows.Forms.PictureBox();
             this.lbl_AltaConfirmada = new System.Windows.Forms.Label();
             this.btn_Reiniciar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarAplicacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ImagenUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Cerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_DniIngresado
@@ -315,18 +313,6 @@ namespace Comercio
             this.cmb_TipoUsuarios.Size = new System.Drawing.Size(154, 23);
             this.cmb_TipoUsuarios.TabIndex = 0;
             // 
-            // pb_Cerrar
-            // 
-            this.pb_Cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pb_Cerrar.Image = global::Comercio.Properties.Resources.button_x;
-            this.pb_Cerrar.Location = new System.Drawing.Point(597, 12);
-            this.pb_Cerrar.Name = "pb_Cerrar";
-            this.pb_Cerrar.Size = new System.Drawing.Size(27, 21);
-            this.pb_Cerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_Cerrar.TabIndex = 81;
-            this.pb_Cerrar.TabStop = false;
-            this.pb_Cerrar.Click += new System.EventHandler(this.pb_Cerrar_Click);
-            // 
             // lbl_AltaConfirmada
             // 
             this.lbl_AltaConfirmada.AutoSize = true;
@@ -367,7 +353,6 @@ namespace Comercio
             this.Controls.Add(this.txt_DniIngresado);
             this.Controls.Add(this.txt_ContraseñaIngresada);
             this.Controls.Add(this.btn_Reiniciar);
-            this.Controls.Add(this.pb_Cerrar);
             this.Controls.Add(this.lbl_TipoAcceso);
             this.Controls.Add(this.cmb_TipoUsuarios);
             this.Controls.Add(this.lbl_Remuneracion);
@@ -388,15 +373,14 @@ namespace Comercio
             this.Controls.Add(this.lbl_Apellido);
             this.Controls.Add(this.lbl_Nombre);
             this.Controls.Add(this.lbl_Dni);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmAltaTrabajador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta trabajador Pet Shop Laplume";
             this.Load += new System.EventHandler(this.FrmAltaTrabajador_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarAplicacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ImagenUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Cerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,7 +411,6 @@ namespace Comercio
         private System.Windows.Forms.Label lbl_Remuneracion;
         private System.Windows.Forms.Label lbl_TipoAcceso;
         private System.Windows.Forms.ComboBox cmb_TipoUsuarios;
-        public System.Windows.Forms.PictureBox pb_Cerrar;
         private System.Windows.Forms.Label lbl_AltaConfirmada;
         private System.Windows.Forms.Button btn_Reiniciar;
     }
