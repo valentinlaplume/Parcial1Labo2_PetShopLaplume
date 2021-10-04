@@ -25,6 +25,10 @@ namespace Comercio
 
         #region Cargar info
 
+        /// <summary>
+        /// Carga info de trabajadores dependiendo el tipo de rango
+        /// </summary>
+        /// <param name="tipoSeleccionado"></param>
         private void CargarListaUsuariosPorTipo(EnumTipoUsuario tipoSeleccionado)
         {
             dgv_ListadoUsuarios.Columns[6].Visible = true;
@@ -67,40 +71,29 @@ namespace Comercio
                 default:
                     dgv_ListadoUsuarios.Rows.Clear();
                 break;
-                //  case EnumTipoUsuario.Cliente:
-                //      dataGridView1.Rows.Clear();
-                //      foreach (KeyValuePair<string, Cliente> item in Cliente.ListaClientes)
-                //      {
-                //          if (item.Value is Cliente)
-                //          {
-                //              dataGridView1.Columns[3].Visible = false;
-                //              dataGridView1.Columns[0].Visible = false;
-                //              dataGridView1.Columns[5].HeaderText = "Billetera";
-                //              Cliente clien = (Cliente)item.Value;
-                //              dataGridView1.Rows.Add("",
-                //                                      $"{clien.Dni}",
-                //                                      $"{clien.Nombre}",
-                //                                      $"{clien.Apellido}",
-                //                                      "",
-                //                                      $"{clien.Billetera}");
-                //          }
-                //      }
-                //break;
             }
         }
 
+        /// <summary>
+        /// Carga tipos de trabajador, admin o empleado al combobox
+        /// </summary>
         private void CargarTiposDeUsuarios()
         {
-            //cmb_TipoUsuarios.Items.Add("");
             cmb_TipoUsuarios.Items.Add(EnumTipoUsuario.Administrador);
             cmb_TipoUsuarios.Items.Add(EnumTipoUsuario.Empleado);
-            //cmb_TipoUsuarios.Items.Add(EnumTipoUsuario.Cliente);
         }
 
         #endregion
 
         #region Eventos
-
+        /// <summary>
+        /// Evento load, redimensiona la pantalla sin menus inferiores
+        /// carga tipos de usuarios
+        /// desabilita los botones elminar y modificar hasta seleccionar un
+        /// usuario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmBaseUsuario_Load(object sender, EventArgs e)
         {
             Size = new Size(865, 275);
@@ -110,7 +103,10 @@ namespace Comercio
         }
         #endregion
 
-        // Obtiene el dni de un Usuario desde la seleccion de la fila en el Dat Grid
+        /// <summary>
+        /// Obtiene el dni de un Usuario desde la seleccion de la fila en el Dat Grid
+        /// </summary>
+        /// <returns>Dni encontrado si ok, sino vacio </returns>
         private string GetDniUsuarioPorDataGrid()
         {
             if(CoreDelSistema.ListaUsuarios.ContainsKey(this.dgv_ListadoUsuarios.CurrentRow.Cells[1].Value.ToString()))
@@ -127,6 +123,12 @@ namespace Comercio
             return string.Empty;
         }
 
+        /// <summary>
+        /// Elimina un usuario, trabajador
+        /// Antes pregunta si deseea confirmar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_EliminarUsuario_Click(object sender, EventArgs e)
         {
             if (this.usuarioSeleccionado != null &&
@@ -146,12 +148,21 @@ namespace Comercio
             else
                 MessageBox.Show("El usuario que intentas eliminar es el mismo con el que se inicio sesión",  "Informativo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
+        /// <summary>
+        /// Depenediendo del tipo de usuario se carga la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmb_TipoUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
             CargarListaUsuariosPorTipo((EnumTipoUsuario)cmb_TipoUsuarios.SelectedItem);
         }
 
+        /// <summary>
+        /// Boton que abre el menu de modificacion de trabajador
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ModificarUsuario_Click(object sender, EventArgs e)
         {
             try
@@ -169,6 +180,11 @@ namespace Comercio
             }
         }
 
+        /// <summary>
+        /// Completa los campos con los datos de usuario
+        /// si eligio la opcion modificar
+        /// </summary>
+        /// <param name="usuarioAModificar"></param>
         private void CompletarCamposAModificar(Usuario usuarioAModificar)
         {
             if(usuarioAModificar != null)
@@ -196,6 +212,11 @@ namespace Comercio
             }
         }
 
+        /// <summary>
+        /// Confirma accion, ya sea ALTA - Modificacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Confirmar_Click(object sender, EventArgs e)
         {
             try
@@ -256,7 +277,11 @@ namespace Comercio
                 lbl_Error.Visible = true;
             return false;
         }
-
+        /// <summary>
+        /// Si el legajo es valido habilita el buscador, sino sigue desabilitado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txt_LegajoABuscar_TextChanged(object sender, EventArgs e)
         {
             try
@@ -277,11 +302,21 @@ namespace Comercio
             }
         }
 
+        /// <summary>
+        /// Cierra pantalla abm usuario trabajador
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pb_CerrarAplicacion_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Boton que busca legajo y lo imprime por la lista
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_BuscarLegajo_Click(object sender, EventArgs e)
         {
             int legajoValido;
@@ -324,6 +359,11 @@ namespace Comercio
             }
         }
 
+        /// <summary>
+        /// Selecciona un usuario del data grid, obtiene el dato dni en este caso
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgv_ListadoUsuarios_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -348,10 +388,13 @@ namespace Comercio
                 lbl_DatoCapturado.Text = "ERROR al querer capturar datos del usuario selecionado";
             }
         }
-
+        /// <summary>
+        /// Abre el forms de alta de usuario trabajador
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_AgregarUsuario_Click(object sender, EventArgs e)
         {
-            // mostrar form alta usuario trabajador
             FrmAltaTrabajador formAltaTrabajador = new FrmAltaTrabajador();
             formAltaTrabajador.ShowDialog();
         }

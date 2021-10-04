@@ -19,17 +19,26 @@ namespace Comercio
             InitializeComponent();
         }
 
-
-
         #region EVENTOS
 
+        /// <summary>
+        /// Limpia los campos, desabilita visibilidad del error en caso de que este
+        /// y avisa con sonido la funcion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Reiniciar_Click(object sender, EventArgs e)
         {
             lbl_Error.Visible = false;
             Console.Beep();
             LimpiarCampos();
         }
-
+        /// <summary>
+        /// Evento carga tipo de usuario trabajador
+        /// establece tamaño forms
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAltaTrabajador_Load(object sender, EventArgs e)
         {
             cmb_TipoUsuarios.Items.Add(EnumTipoUsuario.Administrador);
@@ -38,6 +47,9 @@ namespace Comercio
             MaximumSize = Size;
         }
 
+        /// <summary>
+        /// Limpia campos asignados
+        /// </summary>
         private void LimpiarCampos()
         {
             txt_NombreIngresado.Text = "";
@@ -51,7 +63,11 @@ namespace Comercio
         #endregion
 
         #region VALIDACIONES
-
+        /// <summary>
+        /// Valida los campos del alta que no seas vacion ni null
+        /// que el sueldo sea valido y dni valido de 8 caracteres
+        /// </summary>
+        /// <returns></returns>
         private bool SonValidosCamposAlta()
         {
             float sueldoValido;
@@ -77,6 +93,12 @@ namespace Comercio
         #endregion
 
         #region DAR DE ALTA
+        /// <summary>
+        /// Boton que confirma el alta, antes verifica 
+        /// de ser valido muestra mensaje de confirmacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ConfirmarAltaTrabajador_Click(object sender, EventArgs e)
         {
             if(this.SonValidosCamposAlta())
@@ -114,8 +136,5 @@ namespace Comercio
             }
         }
         #endregion
-
-
-
     }
 }

@@ -122,5 +122,20 @@ namespace EntidadesComercio
             return $"{MostrarDatosCompletos()}\n > No posee compras por el momento.";
         }
         #endregion
+
+        /// <summary>
+        /// Buscar un cliente por su dni, si lo encuentre lo retorna
+        /// </summary>
+        /// <param name="dni"></param>
+        /// <returns></returns>
+        static public Cliente BuscarCliente(string dni)
+        {
+            if (!string.IsNullOrEmpty(dni) && Usuario.EsValidoDni(dni) &&
+                CoreDelSistema.ListaClientes.ContainsKey(dni.Trim()))
+            {
+                return CoreDelSistema.ListaClientes[dni.Trim()];
+            }
+            return null;
+        }
     }
 }

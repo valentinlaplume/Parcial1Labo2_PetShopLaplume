@@ -24,20 +24,38 @@ namespace Comercio
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Consutrctor que recibe un booleano, si quiere dar de alta un producto
+        /// recibe true
+        /// </summary>
+        /// <param name="quieroAgregarProducto"></param>
         public FrmAltaModificarProducto(bool quieroAgregarProducto) : this()
         {
-            this.quieroAgregarProducto = quieroAgregarProducto;
-            quieroAgregarProducto = false;
+            if(quieroAgregarProducto)
+                this.quieroAgregarProducto = true;
         }
 
+        /// <summary>
+        /// Constructor que recibe un producto
+        /// si es distinto a null entonces el inicio es de modificar
+        /// </summary>
+        /// <param name="productoAModificar"></param>
         public FrmAltaModificarProducto(Producto productoAModificar) : this()
         {
             if (productoAModificar != null)
+            {
                 this.productoAModificar = productoAModificar;
+                quieroAgregarProducto = false;
+            }
+
         }
         #endregion
 
         #region CARGAR CAMPOS
+        /// <summary>
+        /// Carga los campos con el producto pasado por parametro
+        /// </summary>
+        /// <param name="producto"></param>
         private void CargarCamposConInfoProducto(Producto producto)
         {
             txt_CodigoProductoIngresado.Text = producto.Codigo;
@@ -48,7 +66,11 @@ namespace Comercio
             txt_UrlImagenProducto.Text = producto.UrlImagen;
             pb_ImagenProducto.ImageLocation = producto.UrlImagen; // cargo imagen del url al picture box
         }
-
+        /// <summary>
+        /// Carga las listas con info del producto pasado por parametro
+        /// </summary>
+        /// <param name="producto"></param>
+        /// Cargar
         private void CargarListasConInfoProducto(Producto producto)
         {
             LimpiarListasProductos();
@@ -59,8 +81,12 @@ namespace Comercio
             lst_CantidadStock.Items.Add(producto.Cantidad);
             lst_PrecioUnitario.Items.Add(producto.PrecioUnitario);
         }
+
         #endregion
 
+        /// <summary>
+        /// Limpia campos asignados 
+        /// </summary>
         private void LimpiarCamposAsignadosProducto()
         {
             txt_CodigoProductoIngresado.Text = "";
@@ -69,7 +95,12 @@ namespace Comercio
             txt_CantidadStockProductoIngresado.Text = "";
             txt_PrecioUnidadProductoIngresado.Text = "";
         }
-
+        /// <summary>
+        /// Boton que genera un codigo irrepetible para el codigo,
+        /// Utilizado para el ALTA 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_GenerarCodigo_Click(object sender, EventArgs e)
         {
             Console.Beep();
@@ -77,6 +108,12 @@ namespace Comercio
         }
 
         #region VALIDACIONES
+        /// <summary>
+        /// Verifica campos asignados que no sean vacios
+        /// cantidad de producto positiva y numerica al igual que el 
+        /// precio unitario
+        /// </summary>
+        /// <returns></returns>
         public bool VerificarCamposAsignados()
         {
             if (!string.IsNullOrEmpty(txt_CodigoProductoIngresado.Text) &&
@@ -94,6 +131,13 @@ namespace Comercio
         }
         #endregion
 
+        /// <summary>
+        /// Evento load pre visualizacion, carga el combo box de alta o modificacion
+        /// con los tipo de productos
+        /// Realiza la pantalla dependiendo la opcion, MODIFICAR o ALTA
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAltaModificarProducto_Load(object sender, EventArgs e)
         {
             CargarTiposProductosAlComboBox(cmb_TipoProductoElegido);
@@ -112,6 +156,15 @@ namespace Comercio
             }
         }
 
+
+        #region PERMISOS DEPENDIENDO OPCION
+
+        /// <summary>
+        /// Habilita o no los ppermisos del alta
+        /// generador de codigo
+        /// edicion de codigo
+        /// </summary>
+        /// <param name="esAlta"></param>
         private void HabilitarPermisosAlta(bool esAlta)
         {
             btn_GenerarCodigo.Visible = esAlta;
@@ -119,12 +172,24 @@ namespace Comercio
             cmb_TiposProductos.Visible = esAlta;
             lbl_TipoProducto.Visible = esAlta;
         }
+        #endregion
 
+        /// <summary>
+        /// Muestra la imagen ingresada del campo ulr imagen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txt_UrlImagenProducto_TextChanged(object sender, EventArgs e)
         {
             pb_ImagenProducto.ImageLocation = txt_UrlImagenProducto.Text;
         }
 
+        /// <summary>
+        /// Confirma accion, valida antes
+        /// si es valido confirma ALTA o MODIFICACION
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ConfirmarAccionProducto_Click(object sender, EventArgs e)
         {
             if (VerificarCamposAsignados())
@@ -167,6 +232,12 @@ namespace Comercio
             } else { MessageBox.Show("Verifique que los campos asignados no se encuentren vacios", "Error al querer validar los campos", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
+        /// <summary>
+        /// Carga los campos asignados al clickear en un producto, sirve para ahorro de tipeo
+        /// Tambien muestra su imagen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lst_Codigo_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_CodigoProductoIngresado.Text = lst_Codigo.SelectedItem.ToString();
@@ -179,6 +250,11 @@ namespace Comercio
             }
         }
 
+        /// <summary>
+        /// Boton salir de la pantalla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Salir_Click(object sender, EventArgs e)
         {
             Console.Beep(500,100);

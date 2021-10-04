@@ -40,8 +40,12 @@ namespace Comercio
         private void lst_Codigo_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_CodigoProductoIngresado.Text = lst_Codigo.SelectedItem.ToString();
-            Console.Beep();
-            HabilitarBotones(true);
+            productoBuscado = Producto.BuscarProducto(lst_Codigo.SelectedItem.ToString());
+            if(productoBuscado != null)
+            {
+                Console.Beep();
+                HabilitarBotones(true);
+            }
         }
 
         private void btn_BuscarProducto_Click(object sender, EventArgs e)
@@ -98,19 +102,19 @@ namespace Comercio
             lbl_TituloForms.Text = "STOCK PRODUCTOS";
         }
 
-        private void btn_ModificarProducto_Click(object sender, EventArgs e)
-        {
-            if(productoBuscado != null)
-            {
-                FrmAltaModificarProducto formAltaModificarProducto = new FrmAltaModificarProducto(productoBuscado);
-                formAltaModificarProducto.ShowDialog();
-            }
-        }
-
         private void btn_AgregarProducto_Click(object sender, EventArgs e)
         {
             FrmAltaModificarProducto formAltaModificarProducto = new FrmAltaModificarProducto(true);
-            formAltaModificarProducto.ShowDialog();
+            formAltaModificarProducto.Show();
+        }
+
+        private void btn_ModificarProducto_Click(object sender, EventArgs e)
+        {
+            if(this.productoBuscado != null)
+            {
+                FrmAltaModificarProducto frmAltaModificarProducto = new FrmAltaModificarProducto(this.productoBuscado);
+                frmAltaModificarProducto.ShowDialog();
+            }
         }
     }
 }

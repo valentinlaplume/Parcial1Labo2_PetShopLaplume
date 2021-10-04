@@ -106,6 +106,11 @@ namespace Comercio
             EntidadesComercio.EnumTipoProducto.Juguete,
             EntidadesComercio.EnumTipoProducto.Comodidad,
             EntidadesComercio.EnumTipoProducto.Limpieza,
+            EntidadesComercio.EnumTipoProducto.Farmacia,
+            EntidadesComercio.EnumTipoProducto.Alimento,
+            EntidadesComercio.EnumTipoProducto.Juguete,
+            EntidadesComercio.EnumTipoProducto.Comodidad,
+            EntidadesComercio.EnumTipoProducto.Limpieza,
             EntidadesComercio.EnumTipoProducto.Farmacia});
             this.cmb_TiposProductos.Location = new System.Drawing.Point(109, 30);
             // 

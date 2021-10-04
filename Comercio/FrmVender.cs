@@ -48,18 +48,6 @@ namespace Comercio
         #endregion
 
 
-        private Cliente buscarCliente(string dni)
-        {
-            if (!string.IsNullOrEmpty(dni) && Usuario.EsValidoDni(dni))
-            {
-                foreach (KeyValuePair<string, Cliente> item in CoreDelSistema.ListaClientes)
-                {
-                    if (item.Value.Dni == dni)
-                        return item.Value;
-                }
-            }
-            return new Cliente();
-        }
 
         #region VALIDACIONES
         /// <summary>
@@ -68,7 +56,7 @@ namespace Comercio
         /// <returns></returns>
         private bool ValidarCamposVenta()
         {
-            if (!string.IsNullOrEmpty(txt_CodigoProductoIngresado.Text) &&
+            if ( !string.IsNullOrEmpty(txt_CodigoProductoIngresado.Text) &&
                  !string.IsNullOrEmpty(txt_CantidadProductoIngresado.Text) &&
                  Producto.EsValidoCantidadProducto(txt_CantidadProductoIngresado.Text) &&
                  !string.IsNullOrEmpty(txt_DniClienteIngresado.Text) &&
@@ -92,9 +80,11 @@ namespace Comercio
         {
             if (flagClienteOriginal == false)
             {
-                clienteOriginal = buscarCliente(txt_DniClienteIngresado.Text.Trim());
+                clienteOriginal = Cliente.BuscarCliente(txt_DniClienteIngresado.Text);
                 if (clienteOriginal != null)
                     flagClienteOriginal = true;
+
+                
             }
         }
 
@@ -109,7 +99,7 @@ namespace Comercio
             if(!string.IsNullOrEmpty(dni))
             {
                 // Verifica que no se haya cambiado de Cliente
-                Cliente clienteNuevo = buscarCliente(txt_DniClienteIngresado.Text.Trim());
+                Cliente clienteNuevo = Cliente.BuscarCliente(txt_DniClienteIngresado.Text);
                 if (clienteNuevo != null && clienteNuevo.Dni != clienteOriginal.Dni)
                 {
                     if (MessageBox.Show("A cambiado de Cliente, desea cancelar la anterior venta?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -177,7 +167,7 @@ namespace Comercio
                         }
                     } else { MessageBox.Show("Producto no encontrado, asegurese de que el codigo sea válido", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
-            }else { MessageBox.Show("Es necesario completar todos los campos", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }else { MessageBox.Show("Campos asignados invalidos", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         #region VENDER POR EFECTIVO - POR QR
@@ -248,6 +238,7 @@ namespace Comercio
         }
 
         #endregion
+
         /// <summary>
         /// Consulta si desea descargar ticker, de ser asi se descarga en un archivo .txt 
         /// como nombre es TicketPetShopLaplume - (el numero de factura)
@@ -258,7 +249,6 @@ namespace Comercio
             if (MessageBox.Show($" > TICKET DE COMPRA <\n{facturaAux.RetornarFactura()}\n > Desea descargar ticket?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 TextWriter ticket = new StreamWriter($"TicketPetShopLaplume-{facturaAux.Numero}.txt");
-                //ticket.WriteLine(cliente.MostrarDatosCompletosConFactura(cliente));
                 ticket.Close();
             }
         }
