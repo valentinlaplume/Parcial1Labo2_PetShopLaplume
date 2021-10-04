@@ -26,6 +26,7 @@ namespace Comercio
         private void btn_Reiniciar_Click(object sender, EventArgs e)
         {
             lbl_Error.Visible = false;
+            Console.Beep();
             LimpiarCampos();
         }
 
@@ -92,6 +93,7 @@ namespace Comercio
                                                                             EnumTipoUsuario.Administrador,
                                                                             txt_UrlFotoPerfilIngresada.Text);
                     CoreDelSistema.ListaUsuarios.Add(txt_DniIngresado.Text, administradorAgregado);
+                    Console.Beep();
                     MessageBox.Show($"{administradorAgregado.MostrarDatosCompletos()}\n - Alta confirmada");
                 }
                 else if ((EnumTipoUsuario)cmb_TipoUsuarios.SelectedItem is EnumTipoUsuario.Empleado)
@@ -106,6 +108,7 @@ namespace Comercio
                                                                             0,
                                                                             txt_UrlFotoPerfilIngresada.Text);
                     CoreDelSistema.ListaUsuarios.Add(txt_DniIngresado.Text, empleadoAgregado);
+                    Console.Beep();
                     MessageBox.Show($"{empleadoAgregado.MostrarDatosCompletos()}\n - Alta confirmada");
                 }
             }

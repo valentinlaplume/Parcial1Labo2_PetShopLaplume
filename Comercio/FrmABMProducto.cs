@@ -32,6 +32,7 @@ namespace Comercio
             TextWriter ticket = new StreamWriter($"StockPetShopLaplume{new Random().Next(0, 9999)}.csv");
             ticket.WriteLine(stock.ToString());
             ticket.Close();
+            Console.Beep(100,200);
             MessageBox.Show("Stock completo a sido descargado con éxito");
         }
         #endregion
@@ -39,6 +40,7 @@ namespace Comercio
         private void lst_Codigo_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_CodigoProductoIngresado.Text = lst_Codigo.SelectedItem.ToString();
+            Console.Beep();
             HabilitarBotones(true);
         }
 
@@ -49,6 +51,7 @@ namespace Comercio
                 productoBuscado = Producto.BuscarProducto(txt_CodigoProductoIngresado.Text);
                 if (productoBuscado != null)
                 {
+                    Console.Beep();
                     lbl_ProductoEncontrado.Visible = true;
                     HabilitarBotones(true);
                     LimpiarListasProductos();
@@ -68,6 +71,7 @@ namespace Comercio
                     MessageBox.Show($"{productoBuscado.MostrarDatosCompletos()}\nDesea confirmar la baja?", "Confirmacion, baja producto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes &&
                     CoreDelSistema.ListaProductos.Remove(productoBuscado))
                 {
+                    Console.Beep(500,200);
                     LimpiarListasProductos();
                     txt_CodigoProductoIngresado.Text = "";
                     lbl_ProductoEncontrado.Visible = false;

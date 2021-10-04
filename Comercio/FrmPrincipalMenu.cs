@@ -57,30 +57,35 @@ namespace Comercio
 
         private void pb_MenuTrabajadora_Click(object sender, EventArgs e)
         {
+            Console.Beep();
             FrmABMTrabajador formBaseUsuario = new FrmABMTrabajador();
             formBaseUsuario.ShowDialog();
         }
 
         private void pb_MenuCliente_Click(object sender, EventArgs e)
         {
+            Console.Beep();
             FrmCliente formCliente = new FrmCliente();
             formCliente.ShowDialog();
         }
 
         private void pb_MenuVentas_Click(object sender, EventArgs e)
         {
+            Console.Beep();
             FrmVender formVender = new FrmVender();
             formVender.ShowDialog();
         }
 
         private void pb_MenuProductos_Click(object sender, EventArgs e)
         {
+            Console.Beep();
             FrmABMProducto formABMProducto = new FrmABMProducto();
             formABMProducto.ShowDialog();
         }
 
         private void pb_CerrarSesion_Click(object sender, EventArgs e)
         {
+            Console.Beep(500, 100);
             FrmLogin formLogin = new FrmLogin();
             this.Close();
             formLogin.Show();
@@ -88,6 +93,7 @@ namespace Comercio
 
         private void pb_ListadoGanancias_Click(object sender, EventArgs e)
         {
+            Console.Beep();
             FrmComprasTotalesCliente frmComprasTotalesCliente = new FrmComprasTotalesCliente(true);
             frmComprasTotalesCliente.Show();
         }

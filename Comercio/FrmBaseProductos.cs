@@ -88,19 +88,9 @@ namespace Comercio
 
         private void pb_CerrarAplicacion_Click_1(object sender, EventArgs e)
         {
+            Console.Beep(500,200);
             this.Close();
         }
-
-        //private void lst_Codigo_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    txt_CodigoProductoIngresado.Text = lst_Codigo.SelectedItem.ToString();
-        //    Producto productoSeleccionado = Producto.ListaProductos.Where(p => p.Codigo == lst_Codigo.SelectedItem.ToString()).FirstOrDefault();
-        //    if (productoSeleccionado != null)
-        //    {
-        //        pb_ImagenProducto.ImageLocation = productoSeleccionado.UrlImagen;
-        //    }
-        //}
-
 
         #region BARRA MOVIMIENTO FORMS
         private bool presion = false;

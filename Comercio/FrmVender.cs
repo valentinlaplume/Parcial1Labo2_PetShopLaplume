@@ -103,6 +103,7 @@ namespace Comercio
                         detalleFacturaAux = new List<DetalleFactura>();
                         facturaAux = new Factura();
                         LimpiarTodosLosCampos();
+                        Console.Beep(5500, 100);
                         return true;
                     }
                     else
@@ -148,8 +149,9 @@ namespace Comercio
                                 StringBuilder carrito = new StringBuilder();
                                 carrito.Append(detalleAux.DatosDetalle());
                                 lst_Carrito.Items.Add(carrito.ToString()); // Agrego a la lista del carrito el producto
-
-                            }else { MessageBox.Show("No hay suficiente stock", "Falta de stock", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+                                Console.Beep(500,100);
+                            }
+                            else { MessageBox.Show("No hay suficiente stock", "Falta de stock", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
                         }
                     } else { MessageBox.Show("Producto no encontrado, asegurese de que el codigo sea válido", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
@@ -163,7 +165,9 @@ namespace Comercio
             {
                 float billeteraActual = clienteOriginal.Billetera - float.Parse(lbl_TotalCompra.Text);
                 if (billeteraActual > -1)
+                {
                     ConfirmarVenta(false, billeteraActual);
+                }
                 else { MessageBox.Show($"No tiene suficiente dinero.\n{clienteOriginal.MostrarDatosCompletos()}Saldo negativo: ${billeteraActual}", "¡Cliente sin dinero!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
             }
         }
@@ -239,6 +243,7 @@ namespace Comercio
             Producto productoSeleccionado = CoreDelSistema.ListaProductos.Where(p => p.Codigo == lst_Codigo.SelectedItem.ToString()).FirstOrDefault();
             if (productoSeleccionado != null)
             {
+                Console.Beep();
                 pb_FotoProducto.ImageLocation = productoSeleccionado.UrlImagen;
             }
         }
@@ -248,6 +253,7 @@ namespace Comercio
         private void btn_VerQr_Click(object sender, EventArgs e)
         {
             FrmCodigoQr formQr = new FrmCodigoQr();
+            Console.Beep();
             formQr.Show();
         }
     }

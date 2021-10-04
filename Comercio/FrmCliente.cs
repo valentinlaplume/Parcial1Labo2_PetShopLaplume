@@ -45,6 +45,7 @@ namespace Comercio
         {
             if (CoreDelSistema.ListaClientes.ContainsKey(txt_DniABuscar.Text))
             {
+                Console.Beep();
                 lbl_DniNoEncontrado.Visible = false;
                 this.clienteSeleccionado = CoreDelSistema.ListaClientes[txt_DniABuscar.Text];
                 dgv_ListadoClientes.Rows.Clear();
@@ -81,6 +82,7 @@ namespace Comercio
                 // aca deveria preguntar si el combo box está seleccionado algo
                 if(GetDniClientePorDataGrid() != string.Empty)
                 {
+                    Console.Beep();
                     Size = new Size(751, 273);
                     this.clienteSeleccionado = CoreDelSistema.ListaClientes[GetDniClientePorDataGrid()];
                     lbl_DatoCapturado.BackColor = Color.Transparent;
@@ -130,6 +132,7 @@ namespace Comercio
             if (this.clienteSeleccionado != null)
             {
                 FrmComprasTotalesCliente formComprasTotalesCliente = new FrmComprasTotalesCliente(this.clienteSeleccionado);
+                Console.Beep();
                 formComprasTotalesCliente.ShowDialog();
             }
             else
@@ -191,6 +194,7 @@ namespace Comercio
                                                       float.Parse(txt_BilleteraIngresada.Text));
                 if(clienteAgregado != null)
                 {
+                    Console.Beep();
                     Size = new Size(767, 308);
                     CoreDelSistema.ListaClientes.Add(txt_DniIngresado.Text, clienteAgregado);
                     btn_ConfirmarAlta.Enabled = true;
@@ -215,6 +219,7 @@ namespace Comercio
                 Size = new Size(767, 308);
                 lbl_DatoCapturado.BackColor = Color.Lime;
                 lbl_DatoCapturado.Text = "CLIENTE ELIMINADO";
+                Console.Beep(500,200);
                 this.clienteSeleccionado = new Cliente();
                 this.HabilitarABMCliente(false);
                 CargarClientes();
@@ -255,6 +260,7 @@ namespace Comercio
 
                 lbl_DatoCapturado.BackColor = Color.Lime;
                 lbl_DatoCapturado.Text = "SE A MODIFICADO EL CLIENTE CORRECTAMENTE";
+                Console.Beep();
                 dgv_ListadoClientes.Rows.Clear();
                 CargarCliente(this.clienteSeleccionado);
                 Size = new Size(767, 308);

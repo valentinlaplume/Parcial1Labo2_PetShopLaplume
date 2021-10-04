@@ -78,6 +78,7 @@ namespace Comercio
         {
             if (Usuario.EsUsuario(cmb_Usuario.Text, txt_Contraseña.Text))
             {
+                Console.Beep();
                 prg_BarraInicioSesion.Visible = true;
                 Usuario user = Usuario.BuscarUsuario(cmb_Usuario.Text);
                 FrmPrincipalMenu formPrincipalMenu = new FrmPrincipalMenu(user);
@@ -118,6 +119,7 @@ namespace Comercio
 
         private void pb_CerrarAplicacion_Click(object sender, EventArgs e)
         {
+            Console.Beep(500,200);
             this.Close();
         }
     }

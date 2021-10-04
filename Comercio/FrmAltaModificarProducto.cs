@@ -72,6 +72,7 @@ namespace Comercio
 
         private void btn_GenerarCodigo_Click(object sender, EventArgs e)
         {
+            Console.Beep();
             txt_CodigoProductoIngresado.Text = GeneradorCodigo.GeneradorCodigoProducto();
         }
 
@@ -172,6 +173,7 @@ namespace Comercio
             Producto productoSeleccionado = CoreDelSistema.ListaProductos.Where(p => p.Codigo == lst_Codigo.SelectedItem.ToString()).FirstOrDefault();
             if (productoSeleccionado != null)
             {
+                Console.Beep();
                 CargarCamposConInfoProducto(productoSeleccionado);
                 pb_ImagenProducto.ImageLocation = productoSeleccionado.UrlImagen;
             }
@@ -179,6 +181,7 @@ namespace Comercio
 
         private void btn_Salir_Click(object sender, EventArgs e)
         {
+            Console.Beep(500,100);
             this.Close();
         }
     }

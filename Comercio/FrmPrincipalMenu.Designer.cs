@@ -227,7 +227,7 @@ namespace Comercio
             this.lbl_Ganancias.AutoSize = true;
             this.lbl_Ganancias.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Ganancias.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Ganancias.Location = new System.Drawing.Point(76, 67);
+            this.lbl_Ganancias.Location = new System.Drawing.Point(73, 67);
             this.lbl_Ganancias.Name = "lbl_Ganancias";
             this.lbl_Ganancias.Size = new System.Drawing.Size(53, 13);
             this.lbl_Ganancias.TabIndex = 14;

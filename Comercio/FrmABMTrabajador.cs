@@ -339,6 +339,7 @@ namespace Comercio
                     // Habilito botones para poder modificar o eliminar usuario seleccionado
                     btn_ModificarUsuario.Enabled = true;
                     btn_EliminarUsuario.Enabled = true;
+                    Console.Beep();
                 }
             }
             catch
