@@ -13,6 +13,11 @@ namespace Comercio
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Evento load, carga usuarios y pacta tamaño de forms
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             MinimumSize = Size;
@@ -24,7 +29,9 @@ namespace Comercio
         
         #region Metodos
 
-
+        /// <summary>
+        /// Carga usuarios al combo box
+        /// </summary>
         private void CargarUsuariosAlComboBox()
         {
             foreach (KeyValuePair<string, Usuario> item in CoreDelSistema.ListaUsuarios)
@@ -33,11 +40,9 @@ namespace Comercio
             }
         }
 
-        //private void pb_MinimizarAplicacion_Click(object sender, EventArgs e)
-        //{
-        //    this.WindowState = FormWindowState.Minimized;
-        //}
-
+        /// <summary>
+        /// Limpia los controles asignados
+        /// </summary>
         private void LimpiarControles()
         {
             llb_Autocompletar.Visible = false;
@@ -45,12 +50,10 @@ namespace Comercio
             txt_Contraseña.Text = string.Empty;
         }
 
-        //private void cmb_Usuario_SelectedIndexChanged1(object sender, EventArgs e)
-        //{
-        //    if (cmb_Usuario.Text != string.Empty)
-        //        llb_Autocompletar.Visible = true;
-        //}
-
+        /// <summary>
+        /// Barra de cargando menu principal
+        /// </summary>
+        /// <returns></returns>
         public bool BarraInicioSesion()
         {
             prg_BarraInicioSesion.Minimum = 1;
@@ -65,15 +68,12 @@ namespace Comercio
             return false;
         }
 
-        //private void llb_Autocompletar_LinkClicked1(object sender, LinkLabelLinkClickedEventArgs e)
-        //{
-        //    Usuario usuarioAux = Usuario.BuscarUsuarioPorNombreUsuario(cmb_Usuario.Text);
-        //    if (usuarioAux != null)
-        //        txt_Contraseña.Text = usuarioAux.Contraseña;
-        //    else
-        //        MessageBox.Show("No fue posible encontrar Usuario", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //}
 
+        /// <summary>
+        /// Boton que inicia sesion de trabajador y verifica datos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_IniciarSesion_Click(object sender, EventArgs e)
         {
             if (Usuario.EsUsuario(cmb_Usuario.Text, txt_Contraseña.Text))
@@ -95,7 +95,11 @@ namespace Comercio
                 LimpiarControles();
             }
         }
-
+        /// <summary>
+        /// Selecciona usuarios registrados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmb_Usuario_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmb_Usuario.Text != string.Empty)
@@ -107,7 +111,11 @@ namespace Comercio
                 llb_Autocompletar.Visible = true;
             }
         }
-
+        /// <summary>
+        /// Autocompleta logeo del usuario con su constraseña       
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void llb_Autocompletar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Usuario usuarioAux = Usuario.BuscarUsuario(cmb_Usuario.Text);
@@ -116,7 +124,11 @@ namespace Comercio
             else
                 MessageBox.Show("No fue posible encontrar Usuario", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
+        /// <summary>
+        /// Cierra la aplicacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pb_CerrarAplicacion_Click(object sender, EventArgs e)
         {
             Console.Beep(500,200);

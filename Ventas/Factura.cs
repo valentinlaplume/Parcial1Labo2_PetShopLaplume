@@ -16,11 +16,19 @@ namespace Ventas
         public List<DetalleFactura> Detalles { get => detalles; set => detalles = value; }
         public static int NumeroMaximo { get => numeroMaximo; }
 
+        /// <summary>
+        /// Constructor estatico que incializa numero de factura en 0
+        /// </summary>
         static Factura()
         {
             numeroMaximo = 0;
         }
 
+        /// <summary>
+        /// Constructor del tipo factura
+        /// </summary>
+        /// <param name="fecha"></param>
+        /// <param name="detalles"></param>
         public Factura(DateTime fecha, List<DetalleFactura> detalles)
         {
             Numero = NumeroMaximo + 1;
@@ -32,6 +40,10 @@ namespace Ventas
 
         public Factura() { }
 
+        /// <summary>
+        /// Metodo calcula total de la factura
+        /// </summary>
+        /// <returns>cantidad total de la factura</returns>
         public float CalcularTotal()
         {
             float total = 0;
@@ -43,6 +55,10 @@ namespace Ventas
             return total;
         }
 
+        /// <summary>
+        /// Retorna la factura completa con sus datos del detalle
+        /// </summary>
+        /// <returns>retorna factura completa con datos</returns>
         public string RetornarFactura()
         {
             StringBuilder stringBuilder = new StringBuilder(); // Datos Factura

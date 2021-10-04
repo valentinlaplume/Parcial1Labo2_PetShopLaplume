@@ -15,6 +15,16 @@ namespace EntidadesComercio
         EnumTipoProducto tipoProducto;
         string urlImagen;
         
+        /// <summary>
+        /// Constructor del tipo producto
+        /// </summary>
+        /// <param name="codigo"></param>
+        /// <param name="nombre"></param>
+        /// <param name="caracteristicas"></param>
+        /// <param name="tipoProducto"></param>
+        /// <param name="cantidad"></param>
+        /// <param name="precioUnitario"></param>
+        /// <param name="urlImagen"></param>
         public Producto(string codigo,
                         string nombre,
                         string caracteristicas,
@@ -32,6 +42,9 @@ namespace EntidadesComercio
             UrlImagen = urlImagen;
         }
 
+        /// <summary>
+        /// Constructor por default del tipo producto
+        /// </summary>
         public Producto()
         {
             this.codigo = GeneradorCodigo.GeneradorCodigoProducto();
@@ -43,14 +56,14 @@ namespace EntidadesComercio
 
 
         #region Propiedades
-
-
-
-
         public string Codigo { get => codigo; private set => codigo = value; }
         public string Nombre { get => nombre; set => nombre = value.Trim(); }
         public string Caracteristicas { get => caracteristicas; set => caracteristicas = value; }
         public EnumTipoProducto TipoProducto { get => tipoProducto; set => tipoProducto = value; }
+       
+        /// <summary>
+        /// Propiedad que muestra y asigna cantidad, valida que la cantidad sea numerica y mayor a 0
+        /// </summary>
         public int Cantidad
         {
             get => cantidad;
@@ -64,6 +77,9 @@ namespace EntidadesComercio
             }
         }
 
+        /// <summary>
+        /// Propiedad obtiene y valida-asigna un precio unitario
+        /// </summary>
         public float PrecioUnitario 
         { 
             get => precioUnitario; 
@@ -75,6 +91,9 @@ namespace EntidadesComercio
                     precioUnitario = 0;
             }
         }
+        /// <summary>
+        /// Propiedad url imagen, muestra, asigna pero antes valida imagen del producto, sino se le asigna una por default
+        /// </summary>
         public string UrlImagen
         { 
             get => urlImagen; 
@@ -104,6 +123,11 @@ namespace EntidadesComercio
                 return false;
         }
 
+        /// <summary>
+        /// Valida que el precio unitario sea parciable y que sea mayor a 0
+        /// </summary>
+        /// <param name="precioUnitarioIngresado"></param>
+        /// <returns>true valido, false no valido</returns>
         static public bool EsValidoPrecioUnitarioProducto(string precioUnitarioIngresado)
         {
             if (!string.IsNullOrEmpty(precioUnitarioIngresado) &&
@@ -117,13 +141,21 @@ namespace EntidadesComercio
         #endregion
 
         #endregion
+        /// <summary>
+        /// Muestra los datos de un producto
+        /// </summary>
+        /// <returns>retorna datos del producto</returns>
         public string MostrarDatosCompletos()
         {
             StringBuilder strBuilder = new StringBuilder();
             strBuilder.AppendLine($"CODIGO: {Codigo} | NOMBRE: {Nombre} | CARACTERISTICAS: {Caracteristicas} | TIPO: {tipoProducto} | EN STOCK: {Cantidad} | UNIDAD: $ {PrecioUnitario}");
             return strBuilder.ToString();
         }
-
+        /// <summary>
+        /// Verifica si ya existe el codigo del producto
+        /// </summary>
+        /// <param name="codigoIngresado"></param>
+        /// <returns>retorna true si existe codigo, false si no existe</returns>
         static public bool ExisteCodigo(string codigoIngresado)
         {
             if (!string.IsNullOrEmpty(codigoIngresado))
@@ -137,6 +169,11 @@ namespace EntidadesComercio
             return false;
         }
 
+        /// <summary>
+        /// Busca un producto segun su codigo
+        /// </summary>
+        /// <param name="codigoIngresado"></param>
+        /// <returns>retorna producto si lo encontro, sino retorna null</returns>
         static public Producto BuscarProducto(string codigoIngresado)
         {
             if (!string.IsNullOrEmpty(codigoIngresado))

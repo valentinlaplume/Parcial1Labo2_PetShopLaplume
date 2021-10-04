@@ -6,6 +6,18 @@ namespace EntidadesComercio
     {
         int cantidadVentas;
 
+        /// <summary>
+        /// Constructor de tipo Empleado
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        /// <param name="usuario"></param>
+        /// <param name="contraseña"></param>
+        /// <param name="sueldo"></param>
+        /// <param name="tipoUsuario"></param>
+        /// <param name="cantidadVentas"></param>
+        /// <param name="urlImagen"></param>
         public Empleado(string nombre,
                         string apellido,
                         string dni,
@@ -22,6 +34,10 @@ namespace EntidadesComercio
 
         public int CantidadVentas { get => cantidadVentas; set => cantidadVentas = value; }
 
+        /// <summary>
+        /// Metodo heredado obligatorio, muestra los datos de un Empleado
+        /// </summary>
+        /// <returns>datos empleado</returns>
         public override string MostrarDatosCompletos()
         {
             StringBuilder strBuilder = new StringBuilder();

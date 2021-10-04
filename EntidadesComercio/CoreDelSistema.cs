@@ -15,6 +15,9 @@ namespace EntidadesComercio
         private static Usuario usuarioLogeado;
         private static Dictionary<string, Usuario> listaUsuarios;
 
+        /// <summary>
+        /// Constructor estatico, inicializa listas y pre carga usuarios, productos, clientes
+        /// </summary>
         static CoreDelSistema()
         {
             listaProductos = new List<Producto>();
@@ -29,14 +32,17 @@ namespace EntidadesComercio
         }
 
         #region USUARIOS TRABAJADORES
+        /// <summary>
+        /// Harcodeo de usuarios registrados, el programa inicia con usuarios pre cargados
+        /// </summary>
         static private void HarcodeoTrabajadoresUsuarios()
         {
             ListaUsuarios.Add("42544147", new Administrador("Valentin", "Laplume", "42544147", "Valentin.Admin", "asd111", 150000, EnumTipoUsuario.Administrador,
                                                            "https://media-exp1.licdn.com/dms/image/C4E03AQG5xI2dtwrpoQ/profile-displayphoto-shrink_200_200/0/1627946693294?e=1638403200&v=beta&t=0PrOU9STbwYfOpymnwhvGuGfj025nxxS5n5otHeIMfM"));
             ListaUsuarios.Add("32222222", new Administrador("Roman", "Riquelme", "32222222", "Roman10.Admin", "asd222", 150000, EnumTipoUsuario.Administrador,
                                                             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaKTuKOC4Es3CEpLDdiryoXuWo_Aij-SAx4A&usqp=CAU"));
-            ListaUsuarios.Add("99999999", new Administrador("Lucas", "Rodriguez", "99999999", "Lucas.Admin", "asd777", 150000, EnumTipoUsuario.Administrador,
-                                                            ""));
+            ListaUsuarios.Add("39999999", new Administrador("Lucas", "Rodriguez", "39999999", "Lucas.Admin", "asd777", 150000, EnumTipoUsuario.Administrador,
+                                                            "https://avatars.githubusercontent.com/u/19439749?v=4"));
 
             ListaUsuarios.Add("33333333", new Empleado("Homero", "Simpsons", "33333333", "Homero.Emp", "asd333", 60000, EnumTipoUsuario.Empleado, 0,
                                                         "https://i.pinimg.com/originals/bd/19/2f/bd192f2723f7d81013f04903d9e0428b.png"));
@@ -49,6 +55,9 @@ namespace EntidadesComercio
         #endregion
 
         #region CLIENTES
+        /// <summary>
+        /// Harcodeo de CLIENTES registrados, el programa inicia con CLIENTES pre cargados
+        /// </summary>
         static private void HarcodeoClientes()
         {
             ListaClientes.Add("35555555", new Cliente("Sofia", "Regino", "35555555", new Random().Next(1000, 10000)));
@@ -71,7 +80,9 @@ namespace EntidadesComercio
         #endregion
 
         #region PRODUCTOS
-
+        /// <summary>
+        /// Harcodeo de PRODUCTOS registrados, el programa inicia con CLIENTES pre cargados
+        /// </summary>
         static private void HarcodeoProductos()
         {
             listaProductos.Add(new Producto(GeneradorCodigo.GeneradorCodigoProducto(), "Dog Chow", "Sin Colorantes para perro adulto", EnumTipoProducto.Alimento, 10, new Random().Next(50, 300),
@@ -119,14 +130,11 @@ namespace EntidadesComercio
                 if (value != null)
                     listaProductos = value;
                 else
-                    listaProductos = null; // VER ESTO SI CAMBIAR A NULL
+                    listaProductos = new List<Producto>(); // VER ESTO SI CAMBIAR A NULL
             }
         }
 
         #endregion
-
-
-
 
     }
 }

@@ -6,7 +6,13 @@
         private string apellido;
         private string dni;
 
-        protected Persona(string nombre, string apellido, string dni)
+        /// <summary>
+        /// Constructor base, padre de tipo Persona
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        public Persona(string nombre, string apellido, string dni)
         {
             Nombre = nombre;
             Apellido = apellido;
@@ -17,6 +23,10 @@
         public string Apellido { get => apellido; set => apellido = value; }
         public string Dni { get => dni; set => dni = value; }
 
+        /// <summary>
+        /// Metodo obligatorio abstracto para clases hijas
+        /// </summary>
+        /// <returns></returns>
         public abstract string MostrarDatosCompletos();
 
 

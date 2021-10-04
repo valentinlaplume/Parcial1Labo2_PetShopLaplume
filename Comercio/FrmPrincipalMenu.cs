@@ -18,12 +18,24 @@ namespace Comercio
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor que inciializa usuario de logeo
+        /// </summary>
+        /// <param name="usuarioLogeado"></param>
         public FrmPrincipalMenu(Usuario usuarioLogeado) : this()
         {
             if(usuarioLogeado != null)
                 CoreDelSistema.UsuarioLogeado = usuarioLogeado;
         }
 
+        /// <summary>
+        /// Evento que setea color dependiendo su rango
+        /// Carga imagen de usuario logeado
+        /// Pacta dimensiones de forms
+        /// Da accesos segun rango de usuario logeado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmPrincipalMenu_Load(object sender, EventArgs e)
         {
             if (CoreDelSistema.UsuarioLogeado.TipoUsuario is EnumTipoUsuario.Administrador)
@@ -40,6 +52,9 @@ namespace Comercio
         }
 
         #region Accesos segun rango
+        /// <summary>
+        /// Desabilita accesos de admin al empleado o viceversa
+        /// </summary>
         public void AccesosEmpleado()
         {
             if (CoreDelSistema.UsuarioLogeado.TipoUsuario is EnumTipoUsuario.Empleado)
@@ -55,20 +70,33 @@ namespace Comercio
         }
         #endregion
 
+        /// <summary>
+        /// Boton con el menu del usuario trabajador del PetShop
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pb_MenuTrabajadora_Click(object sender, EventArgs e)
         {
             Console.Beep();
             FrmABMTrabajador formBaseUsuario = new FrmABMTrabajador();
             formBaseUsuario.ShowDialog();
         }
-
+        /// <summary>
+        /// Boton con el menu del cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pb_MenuCliente_Click(object sender, EventArgs e)
         {
             Console.Beep();
             FrmCliente formCliente = new FrmCliente();
             formCliente.ShowDialog();
         }
-
+        /// <summary>
+        /// Boton con el menu de ventas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pb_MenuVentas_Click(object sender, EventArgs e)
         {
             Console.Beep();
@@ -76,13 +104,22 @@ namespace Comercio
             formVender.ShowDialog();
         }
 
+        /// <summary>
+        /// Boton con el menu de productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pb_MenuProductos_Click(object sender, EventArgs e)
         {
             Console.Beep();
             FrmABMProducto formABMProducto = new FrmABMProducto();
             formABMProducto.ShowDialog();
         }
-
+        /// <summary>
+        /// Cierra la aplicacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pb_CerrarSesion_Click(object sender, EventArgs e)
         {
             Console.Beep(500, 100);
@@ -90,7 +127,11 @@ namespace Comercio
             this.Close();
             formLogin.Show();
         }
-
+        /// <summary>
+        /// Boton que muestra el listado de ganancias del PetShop
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pb_ListadoGanancias_Click(object sender, EventArgs e)
         {
             Console.Beep();
