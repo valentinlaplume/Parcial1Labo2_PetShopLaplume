@@ -12,12 +12,6 @@ namespace EntidadesComercio
         private int cantidadCompras;
 
         #region Constructores
-
-        static Cliente()
-        {
-            
-        }
-
         public Cliente() : base(string.Empty, string.Empty, string.Empty)
         {
             facturas = new List<Factura>();

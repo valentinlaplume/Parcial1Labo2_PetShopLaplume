@@ -12,14 +12,41 @@ namespace EntidadesComercio
         private static List<Producto> listaProductos;
         private static Dictionary<string, Cliente> listaClientes;
 
+        private static Usuario usuarioLogeado;
+        private static Dictionary<string, Usuario> listaUsuarios;
+
         static CoreDelSistema()
         {
             listaProductos = new List<Producto>();
-            listaClientes = new Dictionary<string, Cliente>();
-
             HarcodeoProductos();
+
+            listaClientes = new Dictionary<string, Cliente>();
             HarcodeoClientes();
+
+            ListaUsuarios = new Dictionary<string, Usuario>();
+            HarcodeoTrabajadoresUsuarios();
+
         }
+
+        #region USUARIOS TRABAJADORES
+        static private void HarcodeoTrabajadoresUsuarios()
+        {
+            ListaUsuarios.Add("42544147", new Administrador("Valentin", "Laplume", "42544147", "Valentin.Admin", "asd111", 150000, EnumTipoUsuario.Administrador,
+                                                           "https://media-exp1.licdn.com/dms/image/C4E03AQG5xI2dtwrpoQ/profile-displayphoto-shrink_200_200/0/1627946693294?e=1638403200&v=beta&t=0PrOU9STbwYfOpymnwhvGuGfj025nxxS5n5otHeIMfM"));
+            ListaUsuarios.Add("32222222", new Administrador("Roman", "Riquelme", "32222222", "Roman10.Admin", "asd222", 150000, EnumTipoUsuario.Administrador,
+                                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaKTuKOC4Es3CEpLDdiryoXuWo_Aij-SAx4A&usqp=CAU"));
+            ListaUsuarios.Add("99999999", new Administrador("Lucas", "Rodriguez", "99999999", "Lucas.Admin", "asd777", 150000, EnumTipoUsuario.Administrador,
+                                                            ""));
+
+            ListaUsuarios.Add("33333333", new Empleado("Homero", "Simpsons", "33333333", "Homero.Emp", "asd333", 60000, EnumTipoUsuario.Empleado, 0,
+                                                        "https://i.pinimg.com/originals/bd/19/2f/bd192f2723f7d81013f04903d9e0428b.png"));
+            ListaUsuarios.Add("34444444", new Empleado("Sofia", "Regino", "34444444", "Sofia.Emp", "asd444", 60000, EnumTipoUsuario.Empleado, 0,
+                                                        ""));
+        }
+
+        public static Dictionary<string, Usuario> ListaUsuarios { get => listaUsuarios; set => listaUsuarios = value; }
+        public static Usuario UsuarioLogeado { get => usuarioLogeado; set => usuarioLogeado = value; }
+        #endregion
 
         #region CLIENTES
         static private void HarcodeoClientes()

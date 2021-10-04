@@ -153,6 +153,16 @@ namespace Comercio.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gananciasPetShop {
+            get {
+                object obj = ResourceManager.GetObject("gananciasPetShop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap InventarioProducto {
             get {
                 object obj = ResourceManager.GetObject("InventarioProducto", resourceCulture);

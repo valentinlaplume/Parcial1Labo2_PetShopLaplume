@@ -57,9 +57,9 @@ namespace Comercio
             this.lbl_MontoTotalCliente.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_MontoTotalCliente.Location = new System.Drawing.Point(12, 326);
             this.lbl_MontoTotalCliente.Name = "lbl_MontoTotalCliente";
-            this.lbl_MontoTotalCliente.Size = new System.Drawing.Size(356, 26);
+            this.lbl_MontoTotalCliente.Size = new System.Drawing.Size(97, 26);
             this.lbl_MontoTotalCliente.TabIndex = 11;
-            this.lbl_MontoTotalCliente.Text = "Monto total por las compras del Cliente:";
+            this.lbl_MontoTotalCliente.Text = "Ganancia:";
             // 
             // lbl_Titulo
             // 
@@ -69,9 +69,9 @@ namespace Comercio
             this.lbl_Titulo.ForeColor = System.Drawing.Color.White;
             this.lbl_Titulo.Location = new System.Drawing.Point(12, 12);
             this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(346, 33);
+            this.lbl_Titulo.Size = new System.Drawing.Size(257, 33);
             this.lbl_Titulo.TabIndex = 74;
-            this.lbl_Titulo.Text = "HISTORIAL COMPRAS CLIENTE";
+            this.lbl_Titulo.Text = "HISTORIAL COMPRAS ";
             // 
             // FrmComprasTotalesCliente
             // 

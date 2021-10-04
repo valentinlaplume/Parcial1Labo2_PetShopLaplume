@@ -27,7 +27,7 @@ namespace Comercio
 
         private void CargarUsuariosAlComboBox()
         {
-            foreach (KeyValuePair<string, Usuario> item in Usuario.ListaUsuarios)
+            foreach (KeyValuePair<string, Usuario> item in CoreDelSistema.ListaUsuarios)
             {
                 cmb_Usuario.Items.Add(item.Value.UsuarioPropiedad);
             }

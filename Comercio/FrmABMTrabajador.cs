@@ -33,7 +33,7 @@ namespace Comercio
                 case EnumTipoUsuario.Administrador:
                     dgv_ListadoUsuarios.Rows.Clear();
                     dgv_ListadoUsuarios.Columns[6].Visible = false;
-                    foreach (KeyValuePair<string, Usuario> item in Usuario.ListaUsuarios)
+                    foreach (KeyValuePair<string, Usuario> item in CoreDelSistema.ListaUsuarios)
                     {
                         if (item.Value.TipoUsuario == EnumTipoUsuario.Administrador)
                         {
@@ -49,7 +49,7 @@ namespace Comercio
                 break;
                 case EnumTipoUsuario.Empleado:
                     dgv_ListadoUsuarios.Rows.Clear();
-                    foreach (KeyValuePair<string, Usuario> item in Usuario.ListaUsuarios)
+                    foreach (KeyValuePair<string, Usuario> item in CoreDelSistema.ListaUsuarios)
                     {
                         if (item.Value.TipoUsuario == EnumTipoUsuario.Empleado)
                         {
@@ -113,7 +113,7 @@ namespace Comercio
         // Obtiene el dni de un Usuario desde la seleccion de la fila en el Dat Grid
         private string GetDniUsuarioPorDataGrid()
         {
-            if(Usuario.ListaUsuarios.ContainsKey(this.dgv_ListadoUsuarios.CurrentRow.Cells[1].Value.ToString()))
+            if(CoreDelSistema.ListaUsuarios.ContainsKey(this.dgv_ListadoUsuarios.CurrentRow.Cells[1].Value.ToString()))
             {
                 return this.dgv_ListadoUsuarios.CurrentRow.Cells[1].Value.ToString(); 
             }
@@ -130,10 +130,10 @@ namespace Comercio
         private void btn_EliminarUsuario_Click(object sender, EventArgs e)
         {
             if (this.usuarioSeleccionado != null &&
-                Usuario.UsuarioLogeado.Dni != this.usuarioSeleccionado.Dni)
+                CoreDelSistema.UsuarioLogeado.Dni != this.usuarioSeleccionado.Dni)
             {
                 if (MessageBox.Show($"{this.usuarioSeleccionado.MostrarDatosCompletos()}Desea confirmar la baja?", "Confirmacion, baja Usuario", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes &&
-                    Usuario.ListaUsuarios.Remove(this.usuarioSeleccionado.Dni))
+                    CoreDelSistema.ListaUsuarios.Remove(this.usuarioSeleccionado.Dni))
                 {
                     lbl_DatoCapturado.BackColor = Color.Lime;
                     lbl_DatoCapturado.Text = "USUARIO ELIMINADO";
@@ -331,7 +331,7 @@ namespace Comercio
                 if (GetDniUsuarioPorDataGrid() != string.Empty)
                 {
                     Size = new Size(865, 275);
-                    this.usuarioSeleccionado = Usuario.ListaUsuarios[GetDniUsuarioPorDataGrid()]; // inicializo usuario seleccionado del Data Grid
+                    this.usuarioSeleccionado = CoreDelSistema.ListaUsuarios[GetDniUsuarioPorDataGrid()]; // inicializo usuario seleccionado del Data Grid
                     pb_ImagenUsuario.ImageLocation = this.usuarioSeleccionado.UrlImagen;
                     lbl_DatoCapturado.BackColor = Color.Beige;
                     lbl_DatoCapturado.Text = $"{this.usuarioSeleccionado.TipoUsuario} seleccionado: {this.usuarioSeleccionado.Nombre} {this.usuarioSeleccionado.Apellido}";

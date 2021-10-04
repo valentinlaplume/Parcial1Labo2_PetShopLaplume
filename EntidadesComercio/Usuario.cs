@@ -7,8 +7,8 @@ namespace EntidadesComercio
     public class Usuario : Persona
     {
         private static int ultimoLegajo;
-        private static Usuario usuarioLogeado;
-        private static Dictionary<string, Usuario> listaUsuarios;
+        //private static Usuario usuarioLogeado;
+        //private static Dictionary<string, Usuario> listaUsuarios;
 
         private EnumTipoUsuario tipoUsuario;
         private string usuario;
@@ -19,19 +19,6 @@ namespace EntidadesComercio
         static Usuario()
         {
             ultimoLegajo = 0;
-            ListaUsuarios = new Dictionary<string, Usuario>();
-
-            ListaUsuarios.Add("42544147", new Administrador("Valentin", "Laplume", "42544147", "Valentin.Admin", "asd111", 150000, EnumTipoUsuario.Administrador,
-                                                           "https://media-exp1.licdn.com/dms/image/C4E03AQG5xI2dtwrpoQ/profile-displayphoto-shrink_200_200/0/1627946693294?e=1638403200&v=beta&t=0PrOU9STbwYfOpymnwhvGuGfj025nxxS5n5otHeIMfM"));
-            ListaUsuarios.Add("32222222", new Administrador("Roman", "Riquelme", "32222222", "Roman10.Admin", "asd222", 150000, EnumTipoUsuario.Administrador,
-                                                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaKTuKOC4Es3CEpLDdiryoXuWo_Aij-SAx4A&usqp=CAU"));
-            ListaUsuarios.Add("99999999", new Administrador("Lucas", "Rodriguez", "99999999", "Lucas.Admin", "asd777", 150000, EnumTipoUsuario.Administrador,
-                                                            ""));
-
-            ListaUsuarios.Add("33333333", new Empleado("Homero", "Simpsons", "33333333", "Homero.Emp", "asd333", 60000, EnumTipoUsuario.Empleado, 0,
-                                                        "https://i.pinimg.com/originals/bd/19/2f/bd192f2723f7d81013f04903d9e0428b.png"));
-            ListaUsuarios.Add("34444444", new Empleado("Sofia", "Regino", "34444444", "Sofia.Emp", "asd444", 60000, EnumTipoUsuario.Empleado, 0, 
-                                                        ""));
         }
         public Usuario(string nombre,
                        string apellido,
@@ -53,8 +40,7 @@ namespace EntidadesComercio
 
         public string UsuarioPropiedad { get => usuario; set => usuario = value.Trim(); }
         public string Contraseña { get => contraseña; set => contraseña = value.Trim(); }
-        public static Dictionary<string, Usuario> ListaUsuarios { get => listaUsuarios; set => listaUsuarios = value; }
-        public static Usuario UsuarioLogeado { get => usuarioLogeado; set => usuarioLogeado = value; }
+
         public int Legajo { get => legajo; set => legajo = value; }
         public static int UltimoLegajo { get => ultimoLegajo; }
         public EnumTipoUsuario TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
@@ -82,7 +68,7 @@ namespace EntidadesComercio
         {
             if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(contraseña))
             {
-                foreach (KeyValuePair<string, Usuario> item in Usuario.ListaUsuarios)
+                foreach (KeyValuePair<string, Usuario> item in CoreDelSistema.ListaUsuarios)
                 {
                     if (item.Value.UsuarioPropiedad == usuario.Trim() &&
                         item.Value.Contraseña == contraseña.Trim())
@@ -97,7 +83,7 @@ namespace EntidadesComercio
         {
             if (legajoIngresado <= UltimoLegajo)
             {
-                foreach (KeyValuePair<string, Usuario> item in ListaUsuarios)
+                foreach (KeyValuePair<string, Usuario> item in CoreDelSistema.ListaUsuarios)
                 {
                     if (item.Value.Legajo == legajoIngresado)
                         return item.Value;
@@ -110,7 +96,7 @@ namespace EntidadesComercio
         {
             if (!string.IsNullOrEmpty(usuarioStr))
             {
-                foreach (KeyValuePair<string, Usuario> item in ListaUsuarios)
+                foreach (KeyValuePair<string, Usuario> item in CoreDelSistema.ListaUsuarios)
                 {
                     if (item.Value.UsuarioPropiedad == usuarioStr.Trim())
                         return item.Value;
@@ -128,7 +114,7 @@ namespace EntidadesComercio
             if (!string.IsNullOrEmpty(dniIngresado) &&
                 reg.IsMatch(dniIngresado) && dniIngresado.Length == 8)
             {
-                foreach (KeyValuePair<string, Usuario> item in Usuario.ListaUsuarios)
+                foreach (KeyValuePair<string, Usuario> item in CoreDelSistema.ListaUsuarios)
                 {
                     if (item.Value.Dni == dniIngresado) // valido que no sea dni repetido
                         return false;
@@ -144,7 +130,7 @@ namespace EntidadesComercio
         {
             if (!string.IsNullOrEmpty(usuarioIngresado))
             {
-                foreach (KeyValuePair<string, Usuario> item in Usuario.ListaUsuarios)
+                foreach (KeyValuePair<string, Usuario> item in CoreDelSistema.ListaUsuarios)
                 {
                     if (item.Value.UsuarioPropiedad == usuarioIngresado) // valido que no sea nombre usuario repetido
                         return false;

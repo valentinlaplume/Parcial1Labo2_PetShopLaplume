@@ -21,19 +21,19 @@ namespace Comercio
         public FrmPrincipalMenu(Usuario usuarioLogeado) : this()
         {
             if(usuarioLogeado != null)
-             Usuario.UsuarioLogeado = usuarioLogeado;
+                CoreDelSistema.UsuarioLogeado = usuarioLogeado;
         }
 
         private void FrmPrincipalMenu_Load(object sender, EventArgs e)
         {
-            if (Usuario.UsuarioLogeado.TipoUsuario is EnumTipoUsuario.Administrador)
+            if (CoreDelSistema.UsuarioLogeado.TipoUsuario is EnumTipoUsuario.Administrador)
             {
                 BackColor = Color.FromArgb(51, 70, 116); 
             }
             else { BackColor = Color.FromArgb(159, 187, 240); }
 
-            pb_FotoUsuarioLogeado.ImageLocation = Usuario.UsuarioLogeado.UrlImagen;
-            lbl_LegajoUsuarioLogeado.Text = $"Legajo: {Usuario.UsuarioLogeado.Legajo}";
+            pb_FotoUsuarioLogeado.ImageLocation = CoreDelSistema.UsuarioLogeado.UrlImagen;
+            lbl_LegajoUsuarioLogeado.Text = $"Legajo: {CoreDelSistema.UsuarioLogeado.Legajo}";
             MinimumSize = Size;
             MaximumSize = Size;
             AccesosEmpleado();
@@ -42,10 +42,16 @@ namespace Comercio
         #region Accesos segun rango
         public void AccesosEmpleado()
         {
-            if (Usuario.UsuarioLogeado.TipoUsuario is EnumTipoUsuario.Empleado)
+            if (CoreDelSistema.UsuarioLogeado.TipoUsuario is EnumTipoUsuario.Empleado)
+            {
                 pb_MenuTrabajadora.Enabled = false;
+                pb_ListadoGanancias.Enabled = false;
+            }
             else
+            {
                 pb_MenuTrabajadora.Enabled = true;
+                pb_ListadoGanancias.Enabled = true;
+            }
         }
         #endregion
 
@@ -78,6 +84,12 @@ namespace Comercio
             FrmLogin formLogin = new FrmLogin();
             this.Close();
             formLogin.Show();
+        }
+
+        private void pb_ListadoGanancias_Click(object sender, EventArgs e)
+        {
+            FrmComprasTotalesCliente frmComprasTotalesCliente = new FrmComprasTotalesCliente(true);
+            frmComprasTotalesCliente.Show();
         }
     }
 }

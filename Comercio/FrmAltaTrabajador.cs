@@ -25,6 +25,7 @@ namespace Comercio
 
         private void btn_Reiniciar_Click(object sender, EventArgs e)
         {
+            lbl_Error.Visible = false;
             LimpiarCampos();
         }
 
@@ -90,7 +91,7 @@ namespace Comercio
                                                                             float.Parse(txt_SueldoIngresado.Text),
                                                                             EnumTipoUsuario.Administrador,
                                                                             txt_UrlFotoPerfilIngresada.Text);
-                    Usuario.ListaUsuarios.Add(txt_DniIngresado.Text, administradorAgregado);
+                    CoreDelSistema.ListaUsuarios.Add(txt_DniIngresado.Text, administradorAgregado);
                     MessageBox.Show($"{administradorAgregado.MostrarDatosCompletos()}\n - Alta confirmada");
                 }
                 else if ((EnumTipoUsuario)cmb_TipoUsuarios.SelectedItem is EnumTipoUsuario.Empleado)
@@ -104,7 +105,7 @@ namespace Comercio
                                                                             EnumTipoUsuario.Empleado, 
                                                                             0,
                                                                             txt_UrlFotoPerfilIngresada.Text);
-                    Usuario.ListaUsuarios.Add(txt_DniIngresado.Text, empleadoAgregado);
+                    CoreDelSistema.ListaUsuarios.Add(txt_DniIngresado.Text, empleadoAgregado);
                     MessageBox.Show($"{empleadoAgregado.MostrarDatosCompletos()}\n - Alta confirmada");
                 }
             }

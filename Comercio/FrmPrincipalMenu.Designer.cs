@@ -43,6 +43,8 @@ namespace Comercio
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pb_FotoUsuarioLogeado = new System.Windows.Forms.PictureBox();
             this.lbl_LegajoUsuarioLogeado = new System.Windows.Forms.Label();
+            this.pb_ListadoGanancias = new System.Windows.Forms.PictureBox();
+            this.lbl_Ganancias = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_MenuTrabajadora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_MenuCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_MenuVentas)).BeginInit();
@@ -50,6 +52,7 @@ namespace Comercio
             ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarSesion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_FotoUsuarioLogeado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ListadoGanancias)).BeginInit();
             this.SuspendLayout();
             // 
             // pb_MenuTrabajadora
@@ -158,9 +161,9 @@ namespace Comercio
             this.pb_CerrarSesion.BackColor = System.Drawing.Color.Transparent;
             this.pb_CerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pb_CerrarSesion.Image = global::Comercio.Properties.Resources.CerrarSesion;
-            this.pb_CerrarSesion.Location = new System.Drawing.Point(8, 12);
+            this.pb_CerrarSesion.Location = new System.Drawing.Point(8, 4);
             this.pb_CerrarSesion.Name = "pb_CerrarSesion";
-            this.pb_CerrarSesion.Size = new System.Drawing.Size(37, 30);
+            this.pb_CerrarSesion.Size = new System.Drawing.Size(62, 27);
             this.pb_CerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pb_CerrarSesion.TabIndex = 8;
             this.pb_CerrarSesion.TabStop = false;
@@ -171,7 +174,7 @@ namespace Comercio
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(48, 28);
+            this.label1.Location = new System.Drawing.Point(73, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 9;
@@ -207,12 +210,37 @@ namespace Comercio
             this.lbl_LegajoUsuarioLogeado.TabIndex = 12;
             this.lbl_LegajoUsuarioLogeado.Text = "Legajo:";
             // 
+            // pb_ListadoGanancias
+            // 
+            this.pb_ListadoGanancias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pb_ListadoGanancias.Image = global::Comercio.Properties.Resources.gananciasPetShop;
+            this.pb_ListadoGanancias.Location = new System.Drawing.Point(7, 37);
+            this.pb_ListadoGanancias.Name = "pb_ListadoGanancias";
+            this.pb_ListadoGanancias.Size = new System.Drawing.Size(63, 43);
+            this.pb_ListadoGanancias.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_ListadoGanancias.TabIndex = 13;
+            this.pb_ListadoGanancias.TabStop = false;
+            this.pb_ListadoGanancias.Click += new System.EventHandler(this.pb_ListadoGanancias_Click);
+            // 
+            // lbl_Ganancias
+            // 
+            this.lbl_Ganancias.AutoSize = true;
+            this.lbl_Ganancias.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Ganancias.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Ganancias.Location = new System.Drawing.Point(76, 67);
+            this.lbl_Ganancias.Name = "lbl_Ganancias";
+            this.lbl_Ganancias.Size = new System.Drawing.Size(53, 13);
+            this.lbl_Ganancias.TabIndex = 14;
+            this.lbl_Ganancias.Text = "Ganancias";
+            // 
             // FrmPrincipalMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(748, 297);
+            this.Controls.Add(this.lbl_Ganancias);
+            this.Controls.Add(this.pb_ListadoGanancias);
             this.Controls.Add(this.lbl_LegajoUsuarioLogeado);
             this.Controls.Add(this.pb_FotoUsuarioLogeado);
             this.Controls.Add(this.label1);
@@ -240,6 +268,7 @@ namespace Comercio
             ((System.ComponentModel.ISupportInitialize)(this.pb_CerrarSesion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_FotoUsuarioLogeado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ListadoGanancias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +289,7 @@ namespace Comercio
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pb_FotoUsuarioLogeado;
         private System.Windows.Forms.Label lbl_LegajoUsuarioLogeado;
+        private System.Windows.Forms.PictureBox pb_ListadoGanancias;
+        private System.Windows.Forms.Label lbl_Ganancias;
     }
 }

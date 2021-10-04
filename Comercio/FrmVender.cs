@@ -189,9 +189,9 @@ namespace Comercio
 
                     clienteOriginal.Facturas.Add(facturaAux);
 
-                    if (Usuario.UsuarioLogeado.TipoUsuario is EnumTipoUsuario.Empleado)
+                    if (CoreDelSistema.UsuarioLogeado.TipoUsuario is EnumTipoUsuario.Empleado)
                     {
-                        Empleado emp = (Empleado)Usuario.UsuarioLogeado;
+                        Empleado emp = (Empleado)CoreDelSistema.UsuarioLogeado;
                         emp.CantidadVentas++;
                     }
 
