@@ -26,13 +26,18 @@ namespace Comercio
         #endregion
 
         #region Limpiar
+        /// <summary>
+        /// Limpia por completa la pantalla, campos, listas
+        /// </summary>
         private void LimpiarTodosLosCampos()
         {
             LimpiarCampos();
             lst_Carrito.Items.Clear();
             lbl_TotalCompra.Text = "0";
         }
-
+        /// <summary>
+        /// Limpia campos asignados
+        /// </summary>
         private void LimpiarCampos()
         {
             txt_CantidadProductoIngresado.Text = "";
@@ -42,8 +47,6 @@ namespace Comercio
         }
         #endregion
 
-        #region Eventos
-        #endregion
 
         private Cliente buscarCliente(string dni)
         {
@@ -59,6 +62,10 @@ namespace Comercio
         }
 
         #region VALIDACIONES
+        /// <summary>
+        /// Valida los campos de venta, que no sean vacios y ingreso valido
+        /// </summary>
+        /// <returns></returns>
         private bool ValidarCamposVenta()
         {
             if (!string.IsNullOrEmpty(txt_CodigoProductoIngresado.Text) &&
@@ -78,6 +85,9 @@ namespace Comercio
         }
         #endregion
 
+        /// <summary>
+        /// Carga por primera vez al cliente original
+        /// </summary>
         private void CargarPorPrimeraVezClienteOriginal()
         {
             if (flagClienteOriginal == false)
@@ -88,6 +98,12 @@ namespace Comercio
             }
         }
 
+        /// <summary>
+        /// Verifica si se cambio de cliente y pregunta si quiere cambiarlo del original
+        /// si dice si entonces se limpia la pantalla y resetea compra
+        /// </summary>
+        /// <param name="dni"></param>
+        /// <returns>true si cambio de cliente, false si no cambio</returns>
         private bool SeCambioDeClienteVenta(string dni)
         {
             if(!string.IsNullOrEmpty(dni))
@@ -117,6 +133,12 @@ namespace Comercio
             return false;
         }
 
+        /// <summary>
+        /// Agrega al carrito de compra un producto
+        /// verifica billetera, valida campos, que el producto ingresado sea valido
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_AgregarAlCarrito_Click(object sender, EventArgs e)
         {
             if (ValidarCamposVenta())
@@ -159,6 +181,11 @@ namespace Comercio
         }
 
         #region VENDER POR EFECTIVO - POR QR
+        /// <summary>
+        /// Vende por efectivo y descuenta de la billetera
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Vender_Click(object sender, EventArgs e)
         {
             if (clienteOriginal != null)
@@ -172,6 +199,14 @@ namespace Comercio
             }
         }
 
+        /// <summary>
+        /// Vende por Codigo Qr mercado pago 
+        /// no descuenta la billetera ya que la verificacion está desde lo personal y
+        /// puede ser por debito, credito o mismo plata de mercadopago
+        /// pd :(Es valido y real el codigo)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_VenderPorQr_Click(object sender, EventArgs e)
         {
             if (clienteOriginal != null)
@@ -180,6 +215,12 @@ namespace Comercio
             }
         }
 
+        /// <summary>
+        /// Confirma la venta dependiento si se vende por efectivo o Qr
+        /// realiza el descuento de billetera o no
+        /// </summary>
+        /// <param name="porQr"></param>
+        /// <param name="billeteraActual"></param>
         private void ConfirmarVenta(bool porQr, float billeteraActual)
         {
             if(clienteOriginal != null)
@@ -207,29 +248,48 @@ namespace Comercio
         }
 
         #endregion
-
+        /// <summary>
+        /// Consulta si desea descargar ticker, de ser asi se descarga en un archivo .txt 
+        /// como nombre es TicketPetShopLaplume - (el numero de factura)
+        /// </summary>
+        /// <param name="facturaADescargar"></param>
         private void ConsultarDescargaTicket(Factura facturaADescargar)
         {
             if (MessageBox.Show($" > TICKET DE COMPRA <\n{facturaAux.RetornarFactura()}\n > Desea descargar ticket?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                TextWriter ticket = new StreamWriter($"TicketPetShopLaplume{facturaAux.Numero}.txt");
+                TextWriter ticket = new StreamWriter($"TicketPetShopLaplume-{facturaAux.Numero}.txt");
                 //ticket.WriteLine(cliente.MostrarDatosCompletosConFactura(cliente));
                 ticket.Close();
             }
         }
 
-
+        /// <summary>
+        /// Boton que muestra abm de cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_DarAltaCliente_Click(object sender, EventArgs e)
         {
             FrmCliente formCliente = new FrmCliente();
             formCliente.ShowDialog();
         }
 
+        /// <summary>
+        /// Cierra pantalla ventas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pb_CerrarAplicacion_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Reincia la compra, construyo nuevo detalle de compra
+        /// limpia campos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_ReiniciarCarrito_Click(object sender, EventArgs e)
         {
             lst_Carrito.Items.Clear();
@@ -237,6 +297,12 @@ namespace Comercio
             lbl_TotalCompra.Text = "0";
         }
 
+        /// <summary>
+        /// Al seleccionar un codigo se asigna en el campo de codigoIngresado
+        /// se muestra la foto del producto seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lst_Codigo_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_CodigoProductoIngresado.Text = lst_Codigo.SelectedItem.ToString();
@@ -248,8 +314,12 @@ namespace Comercio
             }
         }
 
-
-
+        /// <summary>
+        /// Abre el forms con la foto del codigo qr 
+        /// pd :(Es valido y real el codigo)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_VerQr_Click(object sender, EventArgs e)
         {
             FrmCodigoQr formQr = new FrmCodigoQr();

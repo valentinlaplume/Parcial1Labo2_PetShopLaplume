@@ -24,6 +24,11 @@ namespace Comercio
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Constructor que recibe un cliente, este cliente es al cual se le van a mostrar 
+        /// las compras
+        /// </summary>
+        /// <param name="clienteSeleccionado"></param>
         public FrmComprasTotalesCliente(Cliente clienteSeleccionado) : this ()
         {
             if(clienteSeleccionado != null)
@@ -32,7 +37,10 @@ namespace Comercio
                 lbl_MontoTotalCliente.Text = "Total gastado Cliente:";
             }
         }
-
+        /// <summary>
+        /// Constructor que recibe un booleano, si es true entonces muestra todas las compras
+        /// </summary>
+        /// <param name="quieroTodasLasCompras"></param>
         public FrmComprasTotalesCliente(bool quieroTodasLasCompras) : this()
         {
             if(quieroTodasLasCompras)
@@ -44,7 +52,12 @@ namespace Comercio
 
 
         #endregion
-
+        /// <summary>
+        /// Evento de inicio que dependiendo si la variable quieroTodasLasCompras es true 
+        /// muestra todas las compras o muestra solo las del cliente pasado por parametro
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmComprasTotalesCliente_Load(object sender, EventArgs e)
         {
             MinimumSize = Size;
@@ -75,6 +88,11 @@ namespace Comercio
             }
 
         }
+
+        /// <summary>
+        /// Carga todas las compras de todos los clientes registrados 
+        /// muestra monto total de ganancias
+        /// </summary>
         private void CargarTodasLasComprasPetShop()
         {
             float totalComprasPetShop = 0;
